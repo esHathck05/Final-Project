@@ -16,24 +16,24 @@ Your specification **should include** the following types of information:
 * Summary or introduction. In general, in a few lines or less, what is your program about or what is it about?
 * How does the user access your program? Is it shared via https://runpython.org? Is a web site? Embedded in 
   a single board computer? 
-  **The program will essentially be, for the most part, exactly like pacman, except a second player can control the ghost. It is shared via runpython.org
+  **The program will essentially be, for the most part, exactly like pacman, except a second player can control the ghost. It is shared via runpython.org**
   
 * If there are graphics screens involved, describe every screen that the user will experience: what is it for? 
   What did the user have to do to get there and how does she move on to the next?
-  **There will be a standard pacman-like map, and if time allows, there will be multiple maps to choose from and/or different levels with different maps
+  **There will be a standard pacman-like map, and if time allows, there will be multiple maps to choose from and/or different levels with different maps**
   
 * For each graphics screen, describe every active control input and what it does. What elements on the screen will
   change in response to user input?
-  **One user will be able to control pacman with the arrow keys, and the other will control the ghost using w a s d controls. 
+  **One user will be able to control pacman with the arrow keys, and the other will control the ghost using w a s d controls.**
   
 * Does the program respond to mouse input? What, exactly, does the mouse do?
-  **the mouse does not do anything
+  **the mouse does not do anything**
 * Does the program respond to keyboard input? How?
-  **pacman will be controlled with the arrow keys and the ghost will be controlled with w a s d
+  **pacman will be controlled with the arrow keys and the ghost will be controlled with w a s d**
 * What graphical assets will be used?
-  **idk what that means but my guess is rectangle circle/ellipse and maybe image and maybe sound and if i need any more than that ill figure it out
+  **idk what that means but my guess is rectangle circle/ellipse and maybe image and maybe sound and if i need any more than that ill figure it out**
 * Does the user have to do anything to install the program?
-  **nah
+  **nah**
 
 Your specification should **not** include the following types of information:
 
