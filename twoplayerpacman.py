@@ -1,5 +1,5 @@
 from ggame import App, Sprite, RectangleAsset, LineStyle, Color
-
+import pygame
 
 # THIS IS HOPEFULLY ALL FOR BUILDING THE MAP
 class GenericWall(Sprite):
@@ -16,6 +16,6 @@ class GenericWall(Sprite):
 # impenetrable wall (black)
 class Wall(GenericWall):
     def __init__(self, x, y):
-        super().__init__(x, y, 50, myapp.height, Color(0, 1.0))
+        super().__init__(x, y, 50, 50, Color(0, 1.0))
     def step(self):
         Wall(self.pos[0], self.pos[1])
