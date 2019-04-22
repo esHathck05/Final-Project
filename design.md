@@ -14,7 +14,7 @@ The design specification should include information like:
 * For every element of the Functional Specification, what code will need to be written to support it?
   **idk what to do to answer this question but idk a lot of classes and sprites for pacman, ghost, maze, etc**
 * What data will be stored or manipulated by the program? How will it be encoded and organized?
- **life count, number of dots eaten, and it will be organized by printing**
+ **life count, time survived, and it will be organized by printing**
 * Describe the logic and/or code behind every interaction with the user, and behind everything displayed.
- **
+ *i guess the arrow keys/wasd will be used to move pacman and the ghost, respectively, and both will have to steer through a map (maybe they can customise their own map? That would be cool) *
 * If your program uses an unusual or notable *algorithm*, what is the algorithm and how does it work?
