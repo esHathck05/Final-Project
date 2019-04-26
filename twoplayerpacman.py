@@ -16,45 +16,55 @@ noline = LineStyle(0, black)
 bg_asset = RectangleAsset(myapp.width, myapp.height, noline, black)
 bg = Sprite(bg_asset, (0,0))
 
-# A ball! This is already in the ggame-tutorials repository
-pacmanplayer = CircleAsset(15, noline, yellow)
-pacman = Sprite(pacmanplayer, (15, 200))
-# custom attributes
-pacman.direction = 4
-pacman.go = True
+class Pacman(Sprite):
+    def __init__(self, x, y, w, h, color, app):
+        super().__init__(CircleAsset(30, LineStyle(0,Color(0, 1.0)), color),
+            (snapfunc(x), snapfunc(y)))
+        Pacman.direction = 4
+        Pacman.go = True
 
-pacman.fxcenter = 0.5
-pacman.fycenter = 0.5
-
-# pacman goes left
-def left(b):
-    pacman.rotation = pi
-    b.direction = -4
-    
-def right(b):
-    pacman.rotation = pi
-    b.direction = 4
-    
-# Set up function for handling screen refresh
-def step():
-    if pacman.go:
-        pacman.x += pacman.direction
-        if pacman.x + pacman.width > myapp.width:
-            pacman.x -= pacman.direction
-            left(pacman)
-        if pacman.x < 0:
-            right(pacman)
-
-# Handle the directions
-def leftKey(event):
-    left(pacman)
-    
-def rightKey(event):
-    right(pacman)
+    # pacman goes left
+    def left(b):
+        Pacman.rotation = pi
+        b.direction = -4
+        
+    def right(b):
+        Pacman.rotation = pi
+        b.direction = 4
+        
+    def step():
+        if key == "up arrow" and pacman.go == True:
+            self.vy = -4
 
 
 # Set up event handlers for the app
-myapp.listenKeyEvent('keydown', 'left arrow', leftKey)
-myapp.listenKeyEvent('keydown', 'right arrow', rightKey)
+class Twoplayer(App):
+    def __init__(self):
+        super().__init__()
+        self.b = None
+        self.pos = (0,0)
+        myapp.listenKeyEvent('keydown', 'left arrow', self.moveKey)
+        myapp.listenKeyEvent('keydown', 'right arrow', self.moveKey)
+        myapp.listenKeyEvent('keydown', 'up arrow', self.moveKey)
 
-myapp.run(step)
+    def step(self):
+        Pacman.x += Pacman.direction
+        if Pacman.x + Pacman.width > myapp.width:
+            Pacman.x -= Pacman.direction
+            left(Pacman)
+        if Pacman.x < 0:
+            right(Pacman)
+    
+    # handles directions
+    def moveKey(self, event):
+            if self.b:
+                self.b.move(event.key)
+                
+    def leftKey(event):
+        left(Pacman)
+        
+    def rightKey(event):
+        right(Pacman)
+
+app = Twoplayer()
+app.run()
