@@ -18,48 +18,54 @@ bg = Sprite(bg_asset, (0,0))
 
 class Pacman(Sprite):
     def __init__(self, x, y, w, h, color, app):
-        super().__init__(CircleAsset(30, LineStyle(0,Color(0, 1.0)), color),
-            (snapfunc(x), snapfunc(y)))
-        Pacman.direction = 4
-        Pacman.go = True
+        super().__init__(CircleAsset(30, LineStyle(0,Color(0, 1.0)), color))
+        self.xdirection = 4
+        self.ydirection = 4
+        self.go = True
+            
+    def move(self, key):
+        if key == "left arrow":
+            self.xdirection = -4
 
-    # pacman goes left
-    def left(b):
-        Pacman.rotation = pi
-        b.direction = -4
-        
-    def right(b):
-        Pacman.rotation = pi
-        b.direction = 4
-        
-    def step():
-        if key == "up arrow" and pacman.go == True:
-            self.vy = -4
+        elif key == "right arrow":
+            self.xdirection = 4
+                
+        elif key == "up arrow":
+            self.ydirection = -4
+            
+        elif key == "down arrow":
+            self.ydirection = 4
 
 
 # Set up event handlers for the app
 class Twoplayer(App):
     def __init__(self):
         super().__init__()
-        self.b = None
-        self.pos = (0,0)
+        self.pac = Pacman(50, 50, 10, 10, yellow, self)
         myapp.listenKeyEvent('keydown', 'left arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'right arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'up arrow', self.moveKey)
 
     def step(self):
-        Pacman.x += Pacman.direction
-        if Pacman.x + Pacman.width > myapp.width:
-            Pacman.x -= Pacman.direction
+        self.pac.x += self.pac.xdirection 
+        if self.pac.x + self.pac.width > myapp.width:
+            self.pac.x -= self.pac.xdirection
             left(Pacman)
-        if Pacman.x < 0:
+        if self.pac.x < 0:
             right(Pacman)
+        
+        self.pac.y += self.pac.ydirection
+        if self.pac.y + self.pac.height > myapp.height:
+            self.pac.y -= self.pac.ydirection
+            down(Pacman)
+        if self.pac.y < 0:
+            up(Pacman)
     
     # handles directions
     def moveKey(self, event):
-            if self.b:
-                self.b.move(event.key)
-                
+        if self.pac:
+            self.pac.move(event.key)
+            
     def leftKey(event):
         left(Pacman)
         
