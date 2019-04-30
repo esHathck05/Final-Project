@@ -112,25 +112,24 @@ class Twoplayer(App):
         
     def downKey(event):
         down(Ghost)
-
+        
     def step(self):
         self.pac.x += self.pac.xdirection
         self.pac.y += self.pac.ydirection
         self.ghost.x += self.ghost.xdirection
         self.ghost.y += self.ghost.ydirection
         
-        if self.pac.x + self.pac.width > myapp.width: or self.pac.x < 0:
+        if self.pac.x + self.pac.width > myapp.width or self.pac.x < 0:
             self.pac.xdirection *= -1
-        
+
         if self.pac.y + self.pac.height > myapp.height or self.pac.y < 0:
             self.pac.ydirection *= -1
-            
-        if self.ghost.x + self.ghost.width > myapp.width: or self.ghost.x < 0:
+
+        if self.ghost.x + self.ghost.width > myapp.width or self.ghost.x < 0:
             self.ghost.xdirection *= -1
         
         if self.ghost.y + self.ghost.height > myapp.height or self.ghost.y < 0:
             self.ghost.ydirection *= -1
-
 
 app = Twoplayer()
 app.run()
