@@ -119,37 +119,18 @@ class Twoplayer(App):
         self.ghost.x += self.ghost.xdirection
         self.ghost.y += self.ghost.ydirection
         
-        if self.pac.x > myapp.width:
+        if self.pac.x + self.pac.width > myapp.width: or self.pac.x < 0:
             self.pac.xdirection *= -1
         
-        """
-        if self.pac.x + self.pac.width > myapp.width:
-            self.pac.x -= self.pac.xdirection
-            left(Pacman)
-        if self.pac.x < 0:
-            right(Pacman)
-        
-        self.pac.y += self.pac.ydirection
-        if self.pac.y + self.pac.height > myapp.height:
-            self.pac.y -= self.pac.ydirection
-            down(Pacman)
-        if self.pac.y < 0:
-            up(Pacman)
+        if self.pac.y + self.pac.height > myapp.height or self.pac.y < 0:
+            self.pac.ydirection *= -1
             
-        self.ghost.x += self.ghost.xdirection
-        if self.ghost.x + self.ghost.width > myapp.width:
-            self.ghost.x -= self.ghost.xdirection
-            left(Ghost)
-        if self.ghost.x < 0:
-            right(Ghost)
+        if self.ghost.x + self.ghost.width > myapp.width: or self.ghost.x < 0:
+            self.ghost.xdirection *= -1
         
-        self.ghost.y += self.ghost.ydirection
-        if self.ghost.y + self.ghost.height > myapp.height:
-            self.ghost.y -= self.ghost.ydirection
-            down(Ghost)
-        if self.ghost.y < 0:
-            up(Ghost)
-        """
+        if self.ghost.y + self.ghost.height > myapp.height or self.ghost.y < 0:
+            self.ghost.ydirection *= -1
+
 
 app = Twoplayer()
 app.run()
