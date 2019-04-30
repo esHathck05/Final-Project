@@ -25,23 +25,19 @@ class Pacman(Sprite):
             
     def move(self, key):
         if key == "left arrow":
-            self.xdirection = 0
             self.ydirection = 0
             self.xdirection = -4
 
         elif key == "right arrow":
-            self.xdirection = 0
-            self.ydirection - 0
+            self.ydirection = 0
             self.xdirection = 4
                 
         elif key == "up arrow":
             self.xdirection = 0
-            self.ydirection = 0
             self.ydirection = -4
             
         elif key == "down arrow":
             self.xdirection = 0
-            self.ydirection = 0
             self.ydirection = 4
 
 
