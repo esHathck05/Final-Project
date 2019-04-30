@@ -1,14 +1,11 @@
 from ggame import App, Sprite, RectangleAsset, CircleAsset, LineStyle, Color
-from math import pi
 
 myapp = App()
 
 black = Color(0, 1)
-noline = LineStyle(0, black)
 yellow = Color(0xffff00, 1)
 blue = Color(0x6495ed, 1)
-
-myapp = App()
+noline = LineStyle(0, black)
 
 # define colors and line style
 black = Color(0, 1)
