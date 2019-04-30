@@ -20,7 +20,7 @@ class Pacman(Sprite):
     def __init__(self, x, y, w, h, color, app):
         super().__init__(CircleAsset(30, LineStyle(0,Color(0, 1.0)), color))
         self.xdirection = 4
-        self.ydirection = 4
+        self.ydirection = 0
         self.go = True
             
     def move(self, key):
