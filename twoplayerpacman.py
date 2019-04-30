@@ -25,15 +25,23 @@ class Pacman(Sprite):
             
     def move(self, key):
         if key == "left arrow":
+            self.xdirection = 0
+            self.ydirection = 0
             self.xdirection = -4
 
         elif key == "right arrow":
+            self.xdirection = 0
+            self.ydirection - 0
             self.xdirection = 4
                 
         elif key == "up arrow":
+            self.xdirection = 0
+            self.ydirection = 0
             self.ydirection = -4
             
         elif key == "down arrow":
+            self.xdirection = 0
+            self.ydirection = 0
             self.ydirection = 4
 
 
@@ -45,9 +53,10 @@ class Twoplayer(App):
         myapp.listenKeyEvent('keydown', 'left arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'right arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'up arrow', self.moveKey)
+        myapp.listenKeyEvent('keydown', 'down arrow', self.moveKey)
 
     def step(self):
-        self.pac.x += self.pac.xdirection 
+        self.pac.x += self.pac.xdirection
         if self.pac.x + self.pac.width > myapp.width:
             self.pac.x -= self.pac.xdirection
             left(Pacman)
@@ -71,6 +80,12 @@ class Twoplayer(App):
         
     def rightKey(event):
         right(Pacman)
+        
+    def upKey(event):
+        up(Pacman)
+        
+    def downKey(event):
+        down(Pacman)
 
 app = Twoplayer()
 app.run()
