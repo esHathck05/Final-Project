@@ -5,6 +5,7 @@ myapp = App()
 black = Color(0, 1)
 yellow = Color(0xffff00, 1)
 blue = Color(0x6495ed, 1)
+white = Color(0xfffff0, 1.0)
 noline = LineStyle(0, black)
 
 # define colors and line style
@@ -14,10 +15,14 @@ noline = LineStyle(0, black)
 bg_asset = RectangleAsset(myapp.width, myapp.height, noline, black)
 bg = Sprite(bg_asset, (0,0))
 
+class Wall(Sprite):
+    def __init__(self, x, y, w, h, color, app):
+        super().__init__(RectangleAsset(60, 60, LineStyle(0, Color(0, 1.0)), color))
+
 class Pacman(Sprite):
     def __init__(self, x, y, w, h, color, app):
         super().__init__(CircleAsset(30, LineStyle(0,Color(0, 1.0)), color))
-        self.xdirection = 4
+        self.xdirection = 0
         self.ydirection = 0
         self.go = True
             
@@ -41,7 +46,7 @@ class Pacman(Sprite):
 class Ghost(Sprite):
     def __init__(self, x, y, w, h, color, app):
         super().__init__(CircleAsset(30, LineStyle(0,Color(0, 1.0)), color))
-        self.xdirection = 4
+        self.xdirection = 0
         self.ydirection = 0
         self.go = True
             
@@ -67,6 +72,7 @@ class Ghost(Sprite):
 class Twoplayer(App):
     def __init__(self):
         super().__init__()
+        self.wall = Wall(50, 50, 60, 60, white, self)
         self.pac = Pacman(50, 50, 10, 10, yellow, self)
         self.ghost = Ghost(50, 50, 10, 10, blue, self)
         myapp.listenKeyEvent('keydown', 'left arrow', self.moveKey)
