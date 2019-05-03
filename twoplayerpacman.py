@@ -20,7 +20,7 @@ class Wall(Sprite):
         super().__init__(RectangleAsset(60, 60, LineStyle(0, Color(0, 1.0)), color))
 
 class Pacman(Sprite):
-    def __init__(self, x, y, w, h, color, collisionasset, app):
+    def __init__(self, x, y, w, h, color, app):
         super().__init__(CircleAsset(15, LineStyle(0,Color(0, 1.0)), color))
         self.xdirection = 0
         self.ydirection = 0
