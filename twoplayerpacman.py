@@ -21,7 +21,7 @@ class Wall(Sprite):
 
 class Pacman(Sprite):
     def __init__(self, x, y, w, h, color, app):
-        super().__init__(CircleAsset(30, LineStyle(0,Color(0, 1.0)), color))
+        super().__init__(CircleAsset(15, LineStyle(0,Color(0, 1.0)), color))
         self.xdirection = 0
         self.ydirection = 0
         self.go = True
@@ -45,27 +45,26 @@ class Pacman(Sprite):
             
 class Ghost(Sprite):
     def __init__(self, x, y, w, h, color, app):
-        super().__init__(CircleAsset(30, LineStyle(0,Color(0, 1.0)), color))
+        super().__init__(CircleAsset(15, LineStyle(0,Color(0, 1.0)), color))
         self.xdirection = 0
         self.ydirection = 0
-        self.go = True
             
     def move(self, key):
         if key == "a":
             self.ydirection = 0
-            self.xdirection = -4
+            self.xdirection = -4.15
 
         elif key == "d":
             self.ydirection = 0
-            self.xdirection = 4
+            self.xdirection = 4.15
                 
         elif key == "w":
             self.xdirection = 0
-            self.ydirection = -4
+            self.ydirection = -4.15
             
         elif key == "s":
             self.xdirection = 0
-            self.ydirection = 4
+            self.ydirection = 4.15
 
 
 # Set up event handlers for the app
@@ -124,13 +123,13 @@ class Twoplayer(App):
         
         if self.pac.x + self.pac.width > myapp.width or self.pac.x < 0:
             self.pac.xdirection *= -1
-
+    
         if self.pac.y + self.pac.height > myapp.height or self.pac.y < 0:
             self.pac.ydirection *= -1
-
+            
         if self.ghost.x + self.ghost.width > myapp.width or self.ghost.x < 0:
             self.ghost.xdirection *= -1
-        
+            
         if self.ghost.y + self.ghost.height > myapp.height or self.ghost.y < 0:
             self.ghost.ydirection *= -1
 
