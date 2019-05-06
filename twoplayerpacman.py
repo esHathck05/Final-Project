@@ -20,8 +20,8 @@ class Wall(Sprite):
         super().__init__(RectangleAsset(60, 60, LineStyle(0, Color(0, 1.0)), color), (x, y))
 
 class Pacman(Sprite):
-    def __init__(self, x, y, color, app):
-        super().__init__(EllipseAsset(15, 15, LineStyle(0,Color(0, 1.0)), color), (x, y))
+    def __init__(self, x, y, color, collisionasset, app):
+        super().__init__(EllipseAsset(15, 15, LineStyle(0,Color(0, 1.0)), color), collisionasset, (x, y))
         self.xdirection = 0
         self.ydirection = 0
         self.go = True
@@ -42,6 +42,9 @@ class Pacman(Sprite):
         elif key == "down arrow":
             self.xdirection = 0
             self.ydirection = 4
+            
+    def step(self):
+        collides = self.collidingWithSprites(
             
 class Ghost(Sprite):
     def __init__(self, x, y, color, app):
