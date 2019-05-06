@@ -1,4 +1,4 @@
-from ggame import App, Sprite, RectangleAsset, CircleAsset, LineStyle, Color
+from ggame import App, Sprite, RectangleAsset, CircleAsset, EllipseAsset, LineStyle, Color
 
 myapp = App()
 
@@ -16,15 +16,14 @@ bg_asset = RectangleAsset(myapp.width, myapp.height, noline, black)
 bg = Sprite(bg_asset, (0,0))
 
 class Wall(Sprite):
-    def __init__(self, x, y, w, h, color, app):
-        super().__init__(RectangleAsset(60, 60, LineStyle(0, Color(0, 1.0)), color))
+    def __init__(self, x, y, color, app):
+        super().__init__(RectangleAsset(60, 60, LineStyle(0, Color(0, 1.0)), color), (x, y))
 
 class Pacman(Sprite):
-    def __init__(self, x, y, w, h, color, app):
-        super().__init__(CircleAsset(15, LineStyle(0,Color(0, 1.0)), color))
+    def __init__(self, x, y, color, app):
+        super().__init__(EllipseAsset(15, 15, LineStyle(0,Color(0, 1.0)), color), (x, y))
         self.xdirection = 0
         self.ydirection = 0
-        self.pos = (50, 50)
         self.go = True
             
     def move(self, key):
@@ -45,8 +44,8 @@ class Pacman(Sprite):
             self.ydirection = 4
             
 class Ghost(Sprite):
-    def __init__(self, x, y, w, h, color, app):
-        super().__init__(CircleAsset(15, LineStyle(0,Color(0, 1.0)), color))
+    def __init__(self, x, y, color, app):
+        super().__init__(EllipseAsset(15, 15, LineStyle(0,Color(0, 1.0)), color), (x,y))
         self.xdirection = 0
         self.ydirection = 0
             
@@ -72,9 +71,9 @@ class Ghost(Sprite):
 class Twoplayer(App):
     def __init__(self):
         super().__init__()
-        self.wall = Wall(50, 50, 10, 10, white, self)
-        self.pac = Pacman(50, 50, 10, 10, yellow, self)
-        self.ghost = Ghost(50, 50, 10, 10, blue, self)
+        self.wall = Wall(10, 10, white, self)
+        self.pac = Pacman(0, 0, yellow, self)
+        self.ghost = Ghost(987, 529, blue, self)
         myapp.listenKeyEvent('keydown', 'left arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'right arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'up arrow', self.moveKey)
