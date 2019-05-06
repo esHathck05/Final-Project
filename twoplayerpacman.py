@@ -52,19 +52,19 @@ class Ghost(Sprite):
     def move(self, key):
         if key == "a":
             self.ydirection = 0
-            self.xdirection = -4.15
+            self.xdirection = -4.20
 
         elif key == "d":
             self.ydirection = 0
-            self.xdirection = 4.15
+            self.xdirection = 4.20
                 
         elif key == "w":
             self.xdirection = 0
-            self.ydirection = -4.15
+            self.ydirection = -4.20
             
         elif key == "s":
             self.xdirection = 0
-            self.ydirection = 4.15
+            self.ydirection = 4.20
 
 
 # Set up event handlers for the app
