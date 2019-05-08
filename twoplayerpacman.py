@@ -21,7 +21,7 @@ class Wall(Sprite):
 
 class Pacman(Sprite):
     def __init__(self, x, y, color, app):
-        super().__init__(EllipseAsset(15, 15, LineStyle(0,Color(0, 1.0)), color), collisionasset, (x, y))
+        super().__init__(EllipseAsset(15, 15, LineStyle(0,Color(0, 1.0)), color), (x, y))
         self.xdirection = 0
         self.ydirection = 0
         self.go = True
@@ -137,6 +137,8 @@ class Twoplayer(App):
             
         if self.ghost.y + self.ghost.height > myapp.height or self.ghost.y < 0:
             self.ghost.ydirection *= -1
-
+            
+        self.pac.step()
+        
 app = Twoplayer()
 app.run()
