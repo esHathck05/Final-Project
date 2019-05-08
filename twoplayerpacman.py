@@ -45,8 +45,8 @@ class Pacman(Sprite):
             
     def step(self):
         collides = self.collidingWithSprites(Ghost)
-        if collides:
-            print(collides[0])
+        if len(collides):
+            collides[0].destroy()
             
 class Ghost(Sprite):
     def __init__(self, x, y, color, app):
