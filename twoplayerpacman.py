@@ -43,11 +43,6 @@ class Pacman(Sprite):
             self.xdirection = 0
             self.ydirection = 4
             
-    def step(self):
-        collides = self.collidingWithSprites(Ghost)
-        if len(collides):
-            collides[0].destroy()
-            
 class Ghost(Sprite):
     def __init__(self, x, y, color, app):
         super().__init__(EllipseAsset(15, 15, LineStyle(0,Color(0, 1.0)), color), (x,y))
@@ -70,6 +65,11 @@ class Ghost(Sprite):
         elif key == "s":
             self.xdirection = 0
             self.ydirection = 4.20
+                    
+    def step(self):
+        collides = self.collidingWithSprites(Pacman)
+        if len(collides):
+            collides[0].destroy()
 
 
 # Set up event handlers for the app
@@ -121,6 +121,8 @@ class Twoplayer(App):
         down(Ghost)
         
     def step(self):
+        self.ghost.step()
+        
         self.pac.x += self.pac.xdirection
         self.pac.y += self.pac.ydirection
         self.ghost.x += self.ghost.xdirection
@@ -137,8 +139,6 @@ class Twoplayer(App):
             
         if self.ghost.y + self.ghost.height > myapp.height or self.ghost.y < 0:
             self.ghost.ydirection *= -1
-            
-        self.pac.step()
         
 app = Twoplayer()
 app.run()
