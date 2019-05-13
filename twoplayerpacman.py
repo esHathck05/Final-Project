@@ -25,6 +25,7 @@ class Pacman(Sprite):
         self.xdirection = 0
         self.ydirection = 0
         self.go = True
+        self.living = True
             
     def move(self, key):
         if key == "left arrow":
@@ -42,6 +43,12 @@ class Pacman(Sprite):
         elif key == "down arrow":
             self.xdirection = 0
             self.ydirection = 4
+                            
+    def step(self):
+        collides = self.collidingWithSprites(Ghost)
+        if len(collides):
+            collides[0].destroy()
+            self.living = False
             
 class Ghost(Sprite):
     def __init__(self, x, y, color, app):
@@ -65,11 +72,6 @@ class Ghost(Sprite):
         elif key == "s":
             self.xdirection = 0
             self.ydirection = 4.20
-                    
-    def step(self):
-        collides = self.collidingWithSprites(Pacman)
-        if len(collides):
-            collides[0].destroy()
 
 
 # Set up event handlers for the app
@@ -121,12 +123,13 @@ class Twoplayer(App):
         down(Ghost)
         
     def step(self):
-        self.ghost.step()
+        self.pac.step()
         
-        self.pac.x += self.pac.xdirection
-        self.pac.y += self.pac.ydirection
-        self.ghost.x += self.ghost.xdirection
-        self.ghost.y += self.ghost.ydirection
+        if self.pac.living == True:
+            self.pac.x += self.pac.xdirection
+            self.pac.y += self.pac.ydirection
+            self.ghost.x += self.ghost.xdirection
+            self.ghost.y += self.ghost.ydirection
         
         if self.pac.x + self.pac.width > myapp.width or self.pac.x < 0:
             self.pac.xdirection *= -1
