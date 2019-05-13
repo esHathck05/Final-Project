@@ -51,7 +51,7 @@ class Ghost(Sprite):
         self.xdirection = 0
         self.ydirection = 0
         self.go = True
-        self.living = True
+        self.pacisalive = True
             
     def move(self, key):
         if key == "a":
@@ -74,7 +74,7 @@ class Ghost(Sprite):
         collides = self.collidingWithSprites(Pacman)
         if len(collides):
             collides[0].destroy()
-            self.living = False
+            self.pacisalive = False
 
 
 # Set up event handlers for the app
@@ -128,7 +128,7 @@ class Twoplayer(App):
     def step(self):
         self.ghost.step()
         
-        if self.ghost.living == True:
+        if self.ghost.pacisalive == True:
             self.pac.x += self.pac.xdirection
             self.pac.y += self.pac.ydirection
             self.ghost.x += self.ghost.xdirection
