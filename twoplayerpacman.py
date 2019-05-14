@@ -1,4 +1,6 @@
 from ggame import App, Sprite, RectangleAsset, CircleAsset, EllipseAsset, LineStyle, Color
+import math
+import random
 
 myapp = App()
 
@@ -12,9 +14,9 @@ noline = LineStyle(0, black)
 black = Color(0, 1)
 noline = LineStyle(0, black)
 # a rectangle asset and sprite to use as background
-bg_asset = RectangleAsset(myapp.width, myapp.height, noline, black)
+bg_asset = RectangleAsset(myapp.width, myapp.height, noline, white)
 bg = Sprite(bg_asset, (0,0))
-
+"""
 class Wall(Sprite):
     def __init__(self, x, y, color, app):
         super().__init__(RectangleAsset(60, 60, LineStyle(0, Color(0, 1.0)), color), (x, y), RectangleAsset(66, 66))
@@ -25,6 +27,20 @@ class Wall(Sprite):
         if len(collideswithothers):
             collideswithothers[0].destroy()
             self.everyonemoving = False
+"""
+
+class Wall(Sprite):
+    # Create asset
+    black = Color(0,1)
+    noline = LineStyle(0,black)
+    rect = RectangleAsset(95, 100, noline, black)
+    
+    def __init__(self, position, speed):
+        super().__init__(Wall.rect, position)
+        self.vx = -speed
+        
+    def step(self):
+        self.x += self.vx
 
 class Pacman(Sprite):
     def __init__(self, x, y, color, app):
@@ -88,9 +104,9 @@ class Ghost(Sprite):
 class Twoplayer(App):
     def __init__(self):
         super().__init__()
-        self.wall = Wall(10, 10, white, self)
-        self.pac = Pacman(0, 0, yellow, self)
-        self.ghost = Ghost(987, 529, blue, self)
+        #self.wall = Wall(10, 10, white, self)
+        self.pac = Pacman(200, 200, yellow, self)
+        self.ghost = Ghost(300, 300, blue, self)
         myapp.listenKeyEvent('keydown', 'left arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'right arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'up arrow', self.moveKey)
@@ -99,6 +115,12 @@ class Twoplayer(App):
         myapp.listenKeyEvent('keydown', 'd', self.moveKey)
         myapp.listenKeyEvent('keydown', 'w', self.moveKey)
         myapp.listenKeyEvent('keydown', 's', self.moveKey)
+        
+        self.wallspeed = 3
+        self.count = 0
+        for x in range(0, self.width//100 + 2):
+            Wall((x * 100, 0), self.wallspeed)
+            Wall((x * 100, self.height - 100), self.wallspeed)
     
     # handles directions
     def moveKey(self, event):
@@ -134,9 +156,9 @@ class Twoplayer(App):
         
     def step(self):
         self.ghost.step()
-        self.wall.step()
+        #self.wall.step()
         
-        if self.ghost.pacisalive == True and self.wall.everyonemoving == True:
+        if self.ghost.pacisalive == True: #and self.wall.everyonemoving == True:
             self.pac.x += self.pac.xdirection
             self.pac.y += self.pac.ydirection
             self.ghost.x += self.ghost.xdirection
@@ -153,6 +175,18 @@ class Twoplayer(App):
                 
             if self.ghost.y + self.ghost.height > myapp.height or self.ghost.y < 0:
                 self.ghost.ydirection *= -1
+                
+        for wall in self.getSpritesbyClass(Wall):
+            wall.step()
+            if wall.x < -100 and wall.y < self.height/2:
+                wall.destroy()
+                Wall((self.width, 0.05 * random.randint(0, self.count)), self.wallspeed)
+            elif wall.x < -100 and wall.y > self.height/2:
+                wall.destroy()
+                Wall((self.width, self.height - 100 - 0.05 * random.randint(0, self.count)), self.wallspeed)
+                
+            self.wallspeed += 0.001
+            self.count += 1
         
 app = Twoplayer()
 app.run()
