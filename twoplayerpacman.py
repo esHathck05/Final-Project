@@ -111,12 +111,11 @@ class Twoplayer(App):
         myapp.listenKeyEvent('keydown', 'd', self.moveKey)
         myapp.listenKeyEvent('keydown', 'w', self.moveKey)
         myapp.listenKeyEvent('keydown', 's', self.moveKey)
-        
-        self.wallspeed = 3
+
         self.count = 0
         for x in range(0, self.width//100 + 2):
-            Wall((x * 100, 0), self.wallspeed)
-            Wall((x * 100, self.height - 100), self.wallspeed)
+            Wall((x * 100, 0))
+            Wall((x * 100, self.height - 100))
     
     # handles directions
     def moveKey(self, event):
@@ -173,15 +172,13 @@ class Twoplayer(App):
                 self.ghost.ydirection *= -1
                 
         for wall in self.getSpritesbyClass(Wall):
-            wall.step()
             if wall.x < -100 and wall.y < self.height/2:
                 wall.destroy()
-                Wall((self.width, 0.05 * random.randint(0, self.count)), self.wallspeed)
+                Wall((self.width, 0.05 * random.randint(0, self.count)))
             elif wall.x < -100 and wall.y > self.height/2:
                 wall.destroy()
-                Wall((self.width, self.height - 100 - 0.05 * random.randint(0, self.count)), self.wallspeed)
+                Wall((self.width, self.height - 100 - 0.05 * random.randint(0, self.count)))
                 
-            self.wallspeed += 0.001
             self.count += 1
         
 app = Twoplayer()
