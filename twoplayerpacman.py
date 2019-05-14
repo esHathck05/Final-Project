@@ -152,7 +152,7 @@ class Twoplayer(App):
         self.ghost.step()
         #self.wall.step()
         
-        if self.ghost.pacisalive == True: #and self.wall.everyonemoving == True:
+        if self.ghost.pacisalive == True:
             self.pac.x += self.pac.xdirection
             self.pac.y += self.pac.ydirection
             self.ghost.x += self.ghost.xdirection
@@ -170,14 +170,6 @@ class Twoplayer(App):
             if self.ghost.y + self.ghost.height > myapp.height or self.ghost.y < 0:
                 self.ghost.ydirection *= -1
                 
-        for wall in self.getSpritesbyClass(Wall):
-            if wall.x < -100 and wall.y < self.height/2:
-                wall.destroy()
-                Wall((self.width, 0.05 * random.randint(0, self.count)))
-            elif wall.x < -100 and wall.y > self.height/2:
-                wall.destroy()
-                Wall((self.width, self.height - 100 - 0.05 * random.randint(0, self.count)))
-                
         if self.pac.collidingWithSprites(Wall):
             self.pac.xdirection *= -1
             self.pac.ydirection *= -1
@@ -185,7 +177,21 @@ class Twoplayer(App):
             self.ghost.xdirection *= -1
             self.ghost.ydirection *= -1
                 
-            self.count += 1
+        for wall in self.getSpritesbyClass(Wall):
+            Wall((self.width, 0.05 * random.randint(0, self.count)))
+"""
+        for wall in self.getSpritesbyClass(Wall):
+            if wall.x < -100 and wall.y < self.height/2:
+                wall.destroy()
+                Wall((self.width, 0.05 * random.randint(0, self.count)))
+            elif wall.x < -100 and wall.y > self.height/2:
+                wall.destroy()
+                Wall((self.width, self.height - 100 - 0.05 * random.randint(0, self.count)))
+        
+        self.count += 1
+"""
+                
+        
         
 app = Twoplayer()
 app.run()
