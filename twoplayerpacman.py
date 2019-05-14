@@ -100,7 +100,6 @@ class Ghost(Sprite):
 class Twoplayer(App):
     def __init__(self):
         super().__init__()
-        #self.wall = Wall(10, 10, white, self)
         self.pac = Pacman(200, 200, yellow, self)
         self.ghost = Ghost(300, 300, blue, self)
         myapp.listenKeyEvent('keydown', 'left arrow', self.moveKey)
@@ -178,6 +177,13 @@ class Twoplayer(App):
             elif wall.x < -100 and wall.y > self.height/2:
                 wall.destroy()
                 Wall((self.width, self.height - 100 - 0.05 * random.randint(0, self.count)))
+                
+        if self.pac.collidingWithSprites(Wall):
+            self.pac.xdirection *= -1
+            self.pac.ydirection *= -1
+        if self.ghost.collidingWithSprites(Wall):
+            self.ghost.xdirection *= -1
+            self.ghost.ydirection *= -1
                 
             self.count += 1
         
