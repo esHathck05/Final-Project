@@ -35,12 +35,8 @@ class Wall(Sprite):
     noline = LineStyle(0,black)
     rect = RectangleAsset(95, 100, noline, black)
     
-    def __init__(self, position, speed):
+    def __init__(self, position):
         super().__init__(Wall.rect, position)
-        self.vx = -speed
-        
-    def step(self):
-        self.x += self.vx
 
 class Pacman(Sprite):
     def __init__(self, x, y, color, app):
