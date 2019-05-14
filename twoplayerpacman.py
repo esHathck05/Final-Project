@@ -100,8 +100,8 @@ class Ghost(Sprite):
 class Twoplayer(App):
     def __init__(self):
         super().__init__()
-        self.pac = Pacman(200, 200, yellow, self)
-        self.ghost = Ghost(300, 300, blue, self)
+        self.pac = Pacman(200, 100, yellow, self)
+        self.ghost = Ghost(300, 100, blue, self)
         myapp.listenKeyEvent('keydown', 'left arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'right arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'up arrow', self.moveKey)
