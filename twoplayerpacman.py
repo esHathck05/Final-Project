@@ -113,7 +113,7 @@ class Twoplayer(App):
 
         self.count = 0
         for x in range(0, self.width//100 + 2):
-            Wall((x * 100, 0))
+            Wall((x * 100, random.randint(0, 400)))
             Wall((x * 100, self.height - 100))
     
     # handles directions
@@ -176,9 +176,6 @@ class Twoplayer(App):
         if self.ghost.collidingWithSprites(Wall):
             self.ghost.xdirection *= -1
             self.ghost.ydirection *= -1
-                
-        for wall in self.getSpritesbyClass(Wall):
-            Wall((self.width, 0.05 * random.randint(0, self.count)))
 """
         for wall in self.getSpritesbyClass(Wall):
             if wall.x < -100 and wall.y < self.height/2:
