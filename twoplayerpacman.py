@@ -113,8 +113,7 @@ class Twoplayer(App):
 
         self.count = 0
         for x in range(0, self.width//100 + 2):
-            Wall((x * 100, random.randint(0, 400)))
-            Wall((x * 100, self.height - 100))
+            Wall((x * random.randint(0, myapp.width), random.randint(0, myapp.height)))
     
     # handles directions
     def moveKey(self, event):
