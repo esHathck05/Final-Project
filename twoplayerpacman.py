@@ -112,7 +112,8 @@ class Twoplayer(App):
         myapp.listenKeyEvent('keydown', 's', self.moveKey)
 
         for x in range(0, self.width):
-            Wall((x * random.randint(0, myapp.width), random.randint(0, myapp.height)))
+            #Wall((x * random.randint(0, myapp.width), random.randint(0, myapp.height)))
+            Wall((x * 100, 100))
             
     # handles directions
     def moveKey(self, event):
