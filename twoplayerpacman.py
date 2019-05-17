@@ -44,7 +44,6 @@ class Pacman(Sprite):
         self.xdirection = 0
         self.ydirection = 0
         self.go = True
-        self.living = True
             
     def move(self, key):
         if key == "left arrow":
@@ -110,11 +109,10 @@ class Twoplayer(App):
         myapp.listenKeyEvent('keydown', 'd', self.moveKey)
         myapp.listenKeyEvent('keydown', 'w', self.moveKey)
         myapp.listenKeyEvent('keydown', 's', self.moveKey)
-
+        
         for x in range(0, self.width):
-            #Wall((x * random.randint(0, myapp.width), random.randint(0, myapp.height)))
-            Wall((x * 100, 100))
-            
+            Wall((x * random.randint(0, myapp.width), random.randint(0, myapp.height)))
+     
     # handles directions
     def moveKey(self, event):
         if self.pac:
@@ -175,20 +173,10 @@ class Twoplayer(App):
         if self.ghost.collidingWithSprites(Wall):
             self.ghost.xdirection *= -1
             self.ghost.ydirection *= -1
-            
+"""            
         for wall in self.getSpritesbyClass(Wall):
             if wall.collidingWithSprites(Wall):
                 wall.destroy()
-"""
-        for wall in self.getSpritesbyClass(Wall):
-            if wall.x < -100 and wall.y < self.height/2:
-                wall.destroy()
-                Wall((self.width, 0.05 * random.randint(0, self.count)))
-            elif wall.x < -100 and wall.y > self.height/2:
-                wall.destroy()
-                Wall((self.width, self.height - 100 - 0.05 * random.randint(0, self.count)))
-        
-        self.count += 1
 """
                 
         
