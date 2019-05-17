@@ -16,18 +16,6 @@ noline = LineStyle(0, black)
 # a rectangle asset and sprite to use as background
 bg_asset = RectangleAsset(myapp.width, myapp.height, noline, white)
 bg = Sprite(bg_asset, (0,0))
-"""
-class Wall(Sprite):
-    def __init__(self, x, y, color, app):
-        super().__init__(RectangleAsset(60, 60, LineStyle(0, Color(0, 1.0)), color), (x, y), RectangleAsset(66, 66))
-        self.everyonemoving = True
-        
-    def step(self):
-        collideswithothers = self.collidingWithSprites(Ghost)
-        if len(collideswithothers):
-            collideswithothers[0].destroy()
-            self.everyonemoving = False
-"""
 
 class Wall(Sprite):
     # Create asset
@@ -147,7 +135,6 @@ class Twoplayer(App):
         
     def step(self):
         self.ghost.step()
-        #self.wall.step()
         
         if self.ghost.pacisalive == True:
             self.pac.x += self.pac.xdirection
@@ -173,12 +160,6 @@ class Twoplayer(App):
         if self.ghost.collidingWithSprites(Wall):
             self.ghost.xdirection *= -1
             self.ghost.ydirection *= -1
-"""            
-        for wall in self.getSpritesbyClass(Wall):
-            if wall.collidingWithSprites(Wall):
-                wall.destroy()
-"""
-                
         
         
 app = Twoplayer()
