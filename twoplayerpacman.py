@@ -154,13 +154,15 @@ class Twoplayer(App):
             if self.ghost.y + self.ghost.height > myapp.height or self.ghost.y < 0:
                 self.ghost.ydirection *= -1
                 
+        if self.pac.x + 15 > wall.x 
+"""                
         if self.pac.collidingWithSprites(Wall):
             self.pac.xdirection *= -1
             self.pac.ydirection *= -1
         if self.ghost.collidingWithSprites(Wall):
             self.ghost.xdirection *= -1
             self.ghost.ydirection *= -1
-        
+"""        
         
 app = Twoplayer()
 app.run()
