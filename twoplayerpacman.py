@@ -101,12 +101,7 @@ class Twoplayer(App):
         myapp.listenKeyEvent('keydown', 's', self.moveKey)
         
         for x in range(0, int(myapp.width/60)):
-            Wall((random.randint(0, int(myapp.width) - 100), random.randint(0, int(myapp.height) - 100)))
-     
-        if gamestart == False:
-            if self.pac.collidingWithSprites(Wall):
-                self.destroy()
-                self.pac = Pacman(random.randint(0, myapp.width), random.randint(0, myapp.height), yellow, self)
+            Wall((random.randint(30, int(myapp.width - 30) - 100), random.randint(30, int(30) - 100)))
      
     # handles directions
     def moveKey(self, event):
