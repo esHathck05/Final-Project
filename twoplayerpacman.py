@@ -80,12 +80,6 @@ class Ghost(Sprite):
         if len(collides):
             collides[0].destroy()
             self.pacisalive = False
-            
-class Goal(Sprite):
-    rect = RectangleAsset(20, 20, noline, yellow)
-    
-    def __init__(self, position):
-        super().__init__(Wall.rect, position)
 
 # Set up event handlers for the app
 class Twoplayer(App):
