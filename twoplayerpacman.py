@@ -139,10 +139,6 @@ class Twoplayer(App):
         self.ghost.step()
         gamestart = True
         
-        if gamestart == False:
-            if self.pac.collidingWithSprites(Wall):
-                self.app.killMe(self)
-        
         if self.ghost.pacisalive == True:
             self.pac.x += self.pac.xdirection
             self.pac.y += self.pac.ydirection
