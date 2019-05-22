@@ -105,7 +105,7 @@ class Twoplayer(App):
      
         if gamestart == False:
             if self.pac.collidingWithSprites(Wall):
-                self.destroy[self]
+                self.destroy()
                 self.pac = Pacman(random.randint(0, myapp.width), random.randint(0, myapp.height), yellow, self)
      
     # handles directions
