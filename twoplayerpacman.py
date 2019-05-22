@@ -23,7 +23,7 @@ class Wall(Sprite):
     # Create asset
     black = Color(0,1)
     noline = LineStyle(0,black)
-    rect = RectangleAsset(95, 100, noline, black)
+    rect = RectangleAsset(100, 100, noline, black)
     
     def __init__(self, position):
         super().__init__(Wall.rect, position)
