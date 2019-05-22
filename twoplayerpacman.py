@@ -90,7 +90,7 @@ class Twoplayer(App):
     def __init__(self):
         super().__init__()
         self.pac = Pacman(0, 0, yellow, self)
-        self.ghost = Ghost(30, 30, blue, self)
+        self.ghost = Ghost(int(myapp.width) - 30, int(myapp.height) - 30, blue, self)
         myapp.listenKeyEvent('keydown', 'left arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'right arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'up arrow', self.moveKey)
