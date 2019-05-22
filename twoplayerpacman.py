@@ -19,8 +19,6 @@ bg = Sprite(bg_asset, (0,0))
 
 print("Pacman Score: ")
 
-gamestart = False
-
 class Wall(Sprite):
     rect = RectangleAsset(100, 100, noline, black)
     
@@ -140,7 +138,6 @@ class Twoplayer(App):
             print(int(self.score))
         
         self.ghost.step()
-        gamestart = True
         
         if self.ghost.pacisalive == True:
             self.pac.x += self.pac.xdirection
