@@ -17,6 +17,8 @@ noline = LineStyle(0, black)
 bg_asset = RectangleAsset(myapp.width, myapp.height, noline, white)
 bg = Sprite(bg_asset, (0,0))
 
+gamestart = False
+
 class Wall(Sprite):
     # Create asset
     black = Color(0,1)
@@ -101,6 +103,11 @@ class Twoplayer(App):
         for x in range(0, int(myapp.width/60)):
             Wall((random.randint(0, int(myapp.width) - 100), random.randint(0, int(myapp.height) - 100)))
      
+        if gamestart == False:
+            if self.pac.collidingWithSprites(Wall):
+                self.destroy[self]
+                self.pac = Pacman(random.randint(0, myapp.width), random.randint(0, myapp.height), yellow, self)
+     
     # handles directions
     def moveKey(self, event):
         if self.pac:
@@ -135,6 +142,7 @@ class Twoplayer(App):
         
     def step(self):
         self.ghost.step()
+        gamestart = True
         
         if self.ghost.pacisalive == True:
             self.pac.x += self.pac.xdirection
@@ -153,8 +161,6 @@ class Twoplayer(App):
                 
             if self.ghost.y + self.ghost.height > myapp.height or self.ghost.y < 0:
                 self.ghost.ydirection *= -1
-                
-        #if self.pac.x + 15 > wall.x 
                 
         if self.pac.collidingWithSprites(Wall):
             self.pac.xdirection *= -1
