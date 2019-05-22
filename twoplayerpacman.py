@@ -20,9 +20,6 @@ bg = Sprite(bg_asset, (0,0))
 gamestart = False
 
 class Wall(Sprite):
-    # Create asset
-    black = Color(0,1)
-    noline = LineStyle(0,black)
     rect = RectangleAsset(100, 100, noline, black)
     
     def __init__(self, position):
@@ -83,7 +80,12 @@ class Ghost(Sprite):
         if len(collides):
             collides[0].destroy()
             self.pacisalive = False
-
+            
+class Goal(Sprite):
+    rect = RectangleAsset(20, 20, noline, yellow)
+    
+    def __init__(self, position):
+        super().__init__(Wall.rect, position)
 
 # Set up event handlers for the app
 class Twoplayer(App):
@@ -102,7 +104,7 @@ class Twoplayer(App):
         
         for x in range(0, int(myapp.width/60)):
             Wall((random.randint(30, int(myapp.width - 30) - 100), random.randint(30, int(myapp.height - 30) - 100)))
-     
+            
     # handles directions
     def moveKey(self, event):
         if self.pac:
