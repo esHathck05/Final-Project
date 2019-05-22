@@ -17,7 +17,7 @@ noline = LineStyle(0, black)
 bg_asset = RectangleAsset(myapp.width, myapp.height, noline, white)
 bg = Sprite(bg_asset, (0,0))
 
-score = 0
+print("Pacman Score: ")
 
 gamestart = False
 
@@ -135,9 +135,9 @@ class Twoplayer(App):
         down(Ghost)
         
     def step(self):
-        self.score += 1
+        self.score += 0.5
         if self.score % 100 == 0:
-            print(self.score)
+            print(int(self.score))
         
         self.ghost.step()
         gamestart = True
