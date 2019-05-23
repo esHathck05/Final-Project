@@ -184,11 +184,11 @@ Player 1 Wins!""")
                 self.ghost.ydirection *= -1
                 
         if self.pac.collidingWithSprites(Wall):
-            self.pac.xdirection = 0
-            self.pac.ydirection = 0
+            self.pac.xdirection *= -1
+            self.pac.ydirection *= -1
         if self.ghost.collidingWithSprites(Wall):
-            self.ghost.xdirection = 0
-            self.ghost.ydirection = 0
+            self.ghost.xdirection *= -1
+            self.ghost.ydirection *= -1
 """                
         if self.pac.collidingWithSprites(Wall):
             self.pac.xdirection *= -1
