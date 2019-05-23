@@ -87,7 +87,8 @@ class Ghost(Sprite):
             self.pacisalive = False
             living['Pacman'] = living['Pacman'] - 1
             if living['Pacman'] == 0:
-                print("Player 2 Wins!")
+                print("""
+Player 2 Wins!""")
 
 # Set up event handlers for the app
 class Twoplayer(App):
