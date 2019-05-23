@@ -91,8 +91,8 @@ class Twoplayer(App):
     def __init__(self):
         super().__init__()
         self.score = 0
-        self.pac = Pacman(110, 110, yellow, self)
-        self.ghost = Ghost(int(myapp.width) - 157, int(myapp.height) - 150, blue, self)
+        self.pac = Pacman(int(myapp.width) - 157, int(myapp.height) - 150, yellow, self)
+        self.ghost = Ghost(110, 110, blue, self)
         myapp.listenKeyEvent('keydown', 'left arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'right arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'up arrow', self.moveKey)
@@ -181,7 +181,6 @@ class Twoplayer(App):
             self.ghost.ydirection *= -1
 print("To Control Player 1 (blue): Arrow Keys")
 print("To Control Player 2 (yellow): WASD")
-print("
         
 app = Twoplayer()
 app.run()
