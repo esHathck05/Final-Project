@@ -179,7 +179,9 @@ class Twoplayer(App):
         if self.ghost.collidingWithSprites(Wall):
             self.ghost.xdirection *= -1
             self.ghost.ydirection *= -1
-        
+print("To Control Player 1 (blue): Arrow Keys")
+print("To Control Player 2 (yellow): WASD")
+print("
         
 app = Twoplayer()
 app.run()
