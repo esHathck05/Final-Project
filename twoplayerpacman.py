@@ -32,7 +32,7 @@ class Wall(Sprite):
 
 class Pacman(Sprite):
     def __init__(self, x, y, color, app):
-        super().__init__(EllipseAsset(10, 10, LineStyle(0,Color(0, 1.0)), color), (x, y))
+        super().__init__(EllipseAsset(12, 12, LineStyle(0,Color(0, 1.0)), color), (x, y))
         self.xdirection = 0
         self.ydirection = 0
         self.go = True
@@ -57,7 +57,7 @@ class Pacman(Sprite):
             
 class Ghost(Sprite):
     def __init__(self, x, y, color, app):
-        super().__init__(EllipseAsset(10, 10, LineStyle(0,Color(0, 1.0)), color), (x,y))
+        super().__init__(EllipseAsset(12, 12, LineStyle(0,Color(0, 1.0)), color), (x,y))
         self.xdirection = 0
         self.ydirection = 0
         self.go = True
