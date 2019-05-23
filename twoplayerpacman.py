@@ -161,6 +161,7 @@ class Twoplayer(App):
                 print(int(self.score))
             if self.score == 500:
                 print("Player 1 Wins!")
+                stopscore == True
         
         self.ghost.step()
         
