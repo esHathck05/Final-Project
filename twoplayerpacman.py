@@ -22,8 +22,6 @@ noline = LineStyle(0, black)
 bg_asset = RectangleAsset(myapp.width, myapp.height, noline, white)
 bg = Sprite(bg_asset, (0,0))
 
-print("Pacman Score: ")
-
 class Wall(Sprite):
     rect = RectangleAsset(100, 100, noline, black)
     
@@ -91,8 +89,8 @@ class Twoplayer(App):
     def __init__(self):
         super().__init__()
         self.score = 0
-        self.pac = Pacman(int(myapp.width) - 157, int(myapp.height) - 150, yellow, self)
-        self.ghost = Ghost(110, 110, blue, self)
+        self.pac = Pacman(110, 110, yellow, self)
+        self.ghost = Ghost(int(myapp.width) - 157, int(myapp.height) - 150, blue, self)
         myapp.listenKeyEvent('keydown', 'left arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'right arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'up arrow', self.moveKey)
@@ -181,6 +179,9 @@ class Twoplayer(App):
             self.ghost.ydirection *= -1
 print("To Control Player 1 (blue): Arrow Keys")
 print("To Control Player 2 (yellow): WASD")
+print("Player 1 must stay alive to collect as many points as possible. Player 2 must destroy Player 1")
+print("""
+Pacman Score: """)
         
 app = Twoplayer()
 app.run()
