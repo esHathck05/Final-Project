@@ -22,6 +22,8 @@ noline = LineStyle(0, black)
 bg_asset = RectangleAsset(myapp.width, myapp.height, noline, white)
 bg = Sprite(bg_asset, (0,0))
 
+living = {'Pacman':1}
+
 class Wall(Sprite):
     rect = RectangleAsset(100, 100, noline, black)
     
@@ -83,6 +85,9 @@ class Ghost(Sprite):
         if len(collides):
             collides[0].destroy()
             self.pacisalive = False
+            living['Pacman'] = living['Pacman'] - 1
+            if living['Pacman'] == 0:
+                print("Player 2 Wins!")
 
 # Set up event handlers for the app
 class Twoplayer(App):
@@ -182,7 +187,7 @@ print("To Control Player 1 (yellow): Arrow Keys")
 print("To Control Player 2 (blue): WASD")
 print("Player 1 must stay alive to collect 5000 points. Player 2 must destroy Player 1")
 print("""
-Pacman Score: """)
+Player 1 Score: """)
         
 app = Twoplayer()
 app.run()
