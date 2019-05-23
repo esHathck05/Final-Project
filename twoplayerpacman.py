@@ -158,7 +158,7 @@ class Twoplayer(App):
         self.score += 0.5
         if self.score % 100 == 0 and self.ghost.stopscore == False:
             print(int(self.score))
-        if self.score == 300:
+        if self.score == 2000:
             self.ghost.stopscore = True
             print("""
 Player 1 Wins!""")
@@ -192,7 +192,7 @@ Player 1 Wins!""")
             
 print("To Control Player 1 (yellow): Arrow Keys")
 print("To Control Player 2 (blue): WASD")
-print("Player 1 must stay alive to collect 5000 points to win. Player 2 must destroy Player 1 to win.")
+print("Player 1 must stay alive to collect 2000 points to win. Player 2 must destroy Player 1 to win.")
 print("""
 Player 1 Score: """)
         
