@@ -189,7 +189,7 @@ class Twoplayer(App):
             
 print("To Control Player 1 (yellow): Arrow Keys")
 print("To Control Player 2 (blue): WASD")
-print("Player 1 must stay alive to collect 5000 points. Player 2 must destroy Player 1")
+print("Player 1 must stay alive to collect 5000 points to win. Player 2 must destroy Player 1 to win.")
 print("""
 Player 1 Score: """)
         
