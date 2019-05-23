@@ -155,7 +155,7 @@ class Twoplayer(App):
         down(Ghost)
         
     def step(self):
-        if stopscore == False:
+        if stopscore == True:
             self.score += 0.5
             if self.score % 100 == 0:
                 print(int(self.score))
