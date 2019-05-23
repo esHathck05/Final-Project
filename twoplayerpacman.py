@@ -199,8 +199,8 @@ Player 1 Wins!""")
             self.ghost.ydirection *= -1
 """
             
-print("To Control Player 1 (yellow): Arrow Keys")
-print("To Control Player 2 (blue): WASD")
+print("To Control Player 1 (yellow): WASD")
+print("To Control Player 2 (blue): Arrow Keys")
 print("Player 1 must stay alive to collect 2000 points to win. Player 2 must destroy Player 1 to win.")
 print("""
 Player 1 Score: """)
