@@ -1,8 +1,3 @@
-"""
-for x in range(0, int(myapp.width/60)):
-    Wall((random.randint(30, int(myapp.width - 30) - 100), random.randint(30, int(myapp.height - 30) - 100)))
-"""
-
 from ggame import App, Sprite, RectangleAsset, CircleAsset, EllipseAsset, LineStyle, Color
 import math
 import random
