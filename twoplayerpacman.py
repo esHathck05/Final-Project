@@ -38,19 +38,19 @@ class Pacman(Sprite):
         self.go = True
             
     def move(self, key):
-        if key == "left arrow":
+        if key == "a":
             self.ydirection = 0
             self.xdirection = -4
 
-        elif key == "right arrow":
+        elif key == "d":
             self.ydirection = 0
             self.xdirection = 4
                 
-        elif key == "up arrow":
+        elif key == "w":
             self.xdirection = 0
             self.ydirection = -4
             
-        elif key == "down arrow":
+        elif key == "s":
             self.xdirection = 0
             self.ydirection = 4
                             
@@ -65,19 +65,19 @@ class Ghost(Sprite):
         self.stopscore = False
             
     def move(self, key):
-        if key == "a":
+        if key == "left arrow":
             self.ydirection = 0
             self.xdirection = -4.20
 
-        elif key == "d":
+        elif key == "right arrow":
             self.ydirection = 0
             self.xdirection = 4.20
                 
-        elif key == "w":
+        elif key == "up arrow":
             self.xdirection = 0
             self.ydirection = -4.20
             
-        elif key == "s":
+        elif key == "down arrow":
             self.xdirection = 0
             self.ydirection = 4.20
             
@@ -99,14 +99,14 @@ class Twoplayer(App):
         self.score = 0
         self.pac = Pacman(110, 110, yellow, self)
         self.ghost = Ghost(int(myapp.width) - 157, int(myapp.height) - 150, blue, self)
-        myapp.listenKeyEvent('keydown', 'left arrow', self.moveKey)
-        myapp.listenKeyEvent('keydown', 'right arrow', self.moveKey)
-        myapp.listenKeyEvent('keydown', 'up arrow', self.moveKey)
-        myapp.listenKeyEvent('keydown', 'down arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'a', self.moveKey)
         myapp.listenKeyEvent('keydown', 'd', self.moveKey)
         myapp.listenKeyEvent('keydown', 'w', self.moveKey)
         myapp.listenKeyEvent('keydown', 's', self.moveKey)
+        myapp.listenKeyEvent('keydown', 'left arrow', self.moveKey)
+        myapp.listenKeyEvent('keydown', 'right arrow', self.moveKey)
+        myapp.listenKeyEvent('keydown', 'up arrow', self.moveKey)
+        myapp.listenKeyEvent('keydown', 'down arrow', self.moveKey)
 
         for x in range(0, 1000, 150):
             Wall((0, x))
@@ -130,19 +130,6 @@ class Twoplayer(App):
             self.ghost.move(event.key)
             
     def leftKey(event):
-        left(Pacman)
-        
-    def rightKey(event):
-        right(Pacman)
-        
-    def upKey(event):
-        up(Pacman)
-        
-    def downKey(event):
-        down(Pacman)
-        
-    
-    def leftKey(event):
         left(Ghost)
         
     def rightKey(event):
@@ -153,6 +140,19 @@ class Twoplayer(App):
         
     def downKey(event):
         down(Ghost)
+        
+    
+    def leftKey(event):
+        left(Pacman)
+        
+    def rightKey(event):
+        right(Pacman)
+        
+    def upKey(event):
+        up(Pacman)
+        
+    def downKey(event):
+        down(Pacman)
         
     def step(self):
         self.score += 1
