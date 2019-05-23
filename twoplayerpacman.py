@@ -23,7 +23,6 @@ bg_asset = RectangleAsset(myapp.width, myapp.height, noline, white)
 bg = Sprite(bg_asset, (0,0))
 
 living = {'Pacman':1}
-stopscore = False
 
 class Wall(Sprite):
     rect = RectangleAsset(100, 100, noline, black)
@@ -63,6 +62,7 @@ class Ghost(Sprite):
         self.ydirection = 0
         self.go = True
         self.pacisalive = True
+        self.stopscore = False
             
     def move(self, key):
         if key == "a":
@@ -88,11 +88,9 @@ class Ghost(Sprite):
             self.pacisalive = False
             living['Pacman'] = living['Pacman'] - 1
             if living['Pacman'] == 0:
+                self.stopscore = True
                 print("""
 Player 2 Wins!""")
-
-        if self.pacisalive == False:
-            stopscore = True
 
 # Set up event handlers for the app
 class Twoplayer(App):
@@ -157,13 +155,12 @@ class Twoplayer(App):
         down(Ghost)
         
     def step(self):
-        if stopscore == False:
-            self.score += 0.5
-            if self.score % 100 == 0:
-                print(int(self.score))
-            if self.score == 500:
-                print("Player 1 Wins!")
-                stopscore == True
+        self.score += 0.5
+        if self.score % 100 == 0 and self.ghost.stopscore == False:
+            print(int(self.score))
+        if self.score == 500:
+            self.ghost.stopscore == True
+            print("Player 1 Wins!")
         
         self.ghost.step()
         
