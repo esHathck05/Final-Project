@@ -90,6 +90,8 @@ class Ghost(Sprite):
             if living['Pacman'] == 0:
                 print("""
 Player 2 Wins!""")
+
+        if self.pacisalive == False:
             stopscore = True
 
 # Set up event handlers for the app
