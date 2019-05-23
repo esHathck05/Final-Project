@@ -1,3 +1,8 @@
+"""
+for x in range(0, int(myapp.width/60)):
+    Wall((random.randint(30, int(myapp.width - 30) - 100), random.randint(30, int(myapp.height - 30) - 100)))
+"""
+
 from ggame import App, Sprite, RectangleAsset, CircleAsset, EllipseAsset, LineStyle, Color
 import math
 import random
@@ -86,8 +91,8 @@ class Twoplayer(App):
     def __init__(self):
         super().__init__()
         self.score = 0
-        self.pac = Pacman(0, 0, yellow, self)
-        self.ghost = Ghost(int(myapp.width) - 30, int(myapp.height) - 30, blue, self)
+        self.pac = Pacman(110, 110, yellow, self)
+        self.ghost = Ghost(int(myapp.width) - 157, int(myapp.height) - 150, blue, self)
         myapp.listenKeyEvent('keydown', 'left arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'right arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'up arrow', self.moveKey)
@@ -96,11 +101,22 @@ class Twoplayer(App):
         myapp.listenKeyEvent('keydown', 'd', self.moveKey)
         myapp.listenKeyEvent('keydown', 'w', self.moveKey)
         myapp.listenKeyEvent('keydown', 's', self.moveKey)
-        
-        for x in range(0, int(myapp.width/60)):
-            Wall((random.randint(30, int(myapp.width - 30) - 100), random.randint(30, int(myapp.height - 30) - 100)))
+
+        for x in range(0, 1000, 150):
+            Wall((0, x))
+        for x in range(0, 1000, 150):
+            Wall((150, x))
+        for x in range(0, 1000, 150):
+            Wall((300, x))
+        for x in range(0, 1000, 150):
+            Wall((450, x))
+        for x in range(0, 1000, 150):
+            Wall((600, x))            
+        for x in range(0, 1000, 150):
+            Wall((750, x))
+        for x in range(0, 1000, 150):
+            Wall((900, x))            
             
-    # handles directions
     def moveKey(self, event):
         if self.pac:
             self.pac.move(event.key)
