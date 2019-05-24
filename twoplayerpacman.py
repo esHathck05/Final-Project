@@ -48,7 +48,7 @@ class Pacman(Sprite):
             self.ydirection = 4
                        
     def step(self):
-        if self.ghost.pacisalive == True:
+        if self.go == True:
             if self.x < 0:
                 self.x = int(myapp.width) - 30
                 self.xdirection *= -1
@@ -92,7 +92,7 @@ class Ghost(Sprite):
                 print("""
 Player 2 Wins!""")
         
-        if self.ghost.pacisalive == False:
+        if self.pacisalive == False:
             if self.x < 0:
                 self.x = int(myapp.width) - 30
                 self.xdirection *= -1
