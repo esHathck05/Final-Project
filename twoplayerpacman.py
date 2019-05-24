@@ -183,14 +183,6 @@ Player 1 Wins!""")
         if self.ghost.collidingWithSprites(Wall):
             self.ghost.xdirection *= -1
             self.ghost.ydirection *= -1
-"""                
-        if self.pac.collidingWithSprites(Wall):
-            self.pac.xdirection *= -1
-            self.pac.ydirection *= -1
-        if self.ghost.collidingWithSprites(Wall):
-            self.ghost.xdirection *= -1
-            self.ghost.ydirection *= -1
-"""
             
 print("To Control Player 1 (yellow): WASD")
 print("To Control Player 2 (blue): Arrow Keys")
