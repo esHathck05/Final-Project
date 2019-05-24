@@ -48,11 +48,12 @@ class Pacman(Sprite):
             self.ydirection = 4
                        
     def step(self):
-        if self.x < 0:
-            self.x = int(myapp.width) - 30
-            self.xdirection *= -1
-        if self.x > int(myapp.width) - 30:
-            self.x = 0
+        if self.ghost.pacisalive == True:
+            if self.x < 0:
+                self.x = int(myapp.width) - 30
+                self.xdirection *= -1
+            if self.x > int(myapp.width) - 30:
+                self.x = 0
             
 class Ghost(Sprite):
     def __init__(self, x, y, color, app):
@@ -91,11 +92,12 @@ class Ghost(Sprite):
                 print("""
 Player 2 Wins!""")
         
-        if self.x < 0:
-            self.x = int(myapp.width) - 30
-            self.xdirection *= -1
-        if self.x > int(myapp.width) - 30:
-            self.x = 0
+        if self.ghost.pacisalive == False:
+            if self.x < 0:
+                self.x = int(myapp.width) - 30
+                self.xdirection *= -1
+            if self.x > int(myapp.width) - 30:
+                self.x = 0
 
 # Set up event handlers for the app
 class Twoplayer(App):
@@ -168,7 +170,7 @@ class Twoplayer(App):
             self.ghost.pacisalive = False
             print("""
 Player 1 Wins!""")
-        
+
         self.pac.step()
         self.ghost.step()        
         
