@@ -1,6 +1,4 @@
 from ggame import App, Sprite, RectangleAsset, CircleAsset, EllipseAsset, LineStyle, Color
-import math
-import random
 
 myapp = App()
 
@@ -196,7 +194,7 @@ Player 1 Wins!""")
             
 print("To Control Player 1 (yellow): WASD")
 print("To Control Player 2 (blue): Arrow Keys")
-print("Player 1 must stay alive to collect 2000 points to win. Player 2 must destroy Player 1 to win.")
+print("Player 1 must collect 2000 points to win. Player 2 must destroy Player 1 to win.")
 print("""
 Player 1 Score: """)
         
