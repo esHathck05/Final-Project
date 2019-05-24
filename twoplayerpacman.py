@@ -5,7 +5,7 @@ myapp = App()
 black = Color(0, 1)
 yellow = Color(0xffff00, 1)
 blue = Color(0x6495ed, 1)
-white = Color(0xfffff0, 1.0)
+white = Color(0xfffff0, 1.0)d
 noline = LineStyle(0, black)
 
 # define colors and line style
