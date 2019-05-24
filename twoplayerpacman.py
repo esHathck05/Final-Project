@@ -46,15 +46,7 @@ class Pacman(Sprite):
         elif key == "s":
             self.xdirection = 0
             self.ydirection = 4
-                       
-    def step(self):
-        if self.go == True:
-            if self.x < 0:
-                self.x = int(myapp.width) - 30
-                self.xdirection *= -1
-            if self.x > int(myapp.width) - 30:
-                self.x = 0
-            
+
 class Ghost(Sprite):
     def __init__(self, x, y, color, app):
         super().__init__(EllipseAsset(12, 12, LineStyle(0,Color(0, 1.0)), color), (x,y))
@@ -92,11 +84,10 @@ class Ghost(Sprite):
                 print("""
 Player 2 Wins!""")
         
-        if self.pacisalive == False:
-            if self.x < 0:
-                self.x = int(myapp.width) - 30
-                self.xdirection *= -1
-            if self.x > int(myapp.width) - 30:
+        if self.x < 0:
+            self.x = int(myapp.width) - 30
+            self.xdirection *= -1
+        if self.x > int(myapp.width) - 30:
                 self.x = 0
 
 # Set up event handlers for the app
@@ -171,7 +162,6 @@ class Twoplayer(App):
             print("""
 Player 1 Wins!""")
 
-        self.pac.step()
         self.ghost.step()        
         
         if self.ghost.pacisalive == True:
@@ -198,6 +188,12 @@ Player 1 Wins!""")
         if self.ghost.collidingWithSprites(Wall):
             self.ghost.xdirection *= -1
             self.ghost.ydirection *= -1
+            
+        if self.pac.x < 0:
+            self.pac.x = int(myapp.width) - 30
+            self.pac.xdirection *= -1
+        if self.pac.x > int(myapp.width) - 30:
+            self.pac.x = 0
             
 print("To Control Player 1 (yellow): WASD")
 print("To Control Player 2 (blue): Arrow Keys")
