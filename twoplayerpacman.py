@@ -83,12 +83,6 @@ class Ghost(Sprite):
                 self.stopscore = True
                 print("""
 Player 2 Wins!""")
-        
-        if self.x < 0:
-            self.x = int(myapp.width) - 30
-            self.xdirection *= -1
-        if self.x > int(myapp.width) - 30:
-                self.x = 0
 
 # Set up event handlers for the app
 class Twoplayer(App):
@@ -194,6 +188,12 @@ Player 1 Wins!""")
             self.pac.xdirection *= -1
         if self.pac.x > int(myapp.width) - 30:
             self.pac.x = 0
+            
+        if self.ghost.x < 0:
+            self.ghost.x = int(myapp.width) - 30
+            self.ghost.xdirection *= -1
+        if self.ghost.x > int(myapp.width) - 30:
+            self.ghost.x = 0
             
 print("To Control Player 1 (yellow): WASD")
 print("To Control Player 2 (blue): Arrow Keys")
