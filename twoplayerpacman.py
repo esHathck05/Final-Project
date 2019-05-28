@@ -90,6 +90,7 @@ class Obstacle(Sprite):
         super().__init__(EllipseAsset(10, 10, LineStyle(0,Color(0, 1.0)), color), (x,y))
         self.xdirection = -4
         self.ydirection = 0
+        self.go = True
 
     def step(self):
         if self.y == 110:
