@@ -231,17 +231,17 @@ Player 1 Wins!""")
         if self.obs.y == int(myapp.height)/2 - 29 and self.obs.x == 100:
             firstnumber = int(random.randint(0, 5))
             if firstnumber == 1:
-                self.xobs.direction *= 1
-                self.yobs.direction *= 1
+                self.obs.xdirection *= 1
+                self.obs.ydirection *= 1
             elif firstnumber == 2:
-                self.xobs.direction *= -1
-                self.yobs.direction = 0
+                self.obs.xdirection *= -1
+                self.obs.ydirection = 0
             elif firstnumber == 3:
-                self.xobs.direction *= -1
-                self.yobs.direction *= -1
+                self.obs.xdirection *= -1
+                self.obs.ydirection *= -1
             elif firstnumber == 4:
-                self.xobs.direction = 0
-                self.yobs.direction = -1
+                self.obs.xdirection = 0
+                self.obs.ydirection = -1
             
 print("To Control Player 1 (yellow): WASD")
 print("To Control Player 2 (blue): Arrow Keys")
