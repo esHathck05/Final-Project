@@ -88,10 +88,9 @@ class Obstacle(Sprite):
     def __init__(self, x, y, color, app):
         super().__init__(EllipseAsset(10, 10, LineStyle(0,Color(0, 1.0)), color), (x,y))
 
-    def step(self):
-        if self.y == 135:
-            if self.x == 135:
-                
+    #def step(self):
+     #   if self.y == 135:
+      #      if self.x == 135:
 
 # Set up event handlers for the app
 class Twoplayer(App):
@@ -167,7 +166,7 @@ class Twoplayer(App):
 Player 1 Wins!""")
 
         self.ghost.step()
-        self.obs.step()
+        #self.obs.step()
         
         if self.ghost.pacisalive == True:
             self.pac.x += self.pac.xdirection
