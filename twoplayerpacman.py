@@ -97,6 +97,8 @@ class Obstacle(Sprite):
         self.y += self.ydirection
         if self.y == int(myapp.height)/2 - 29:
             if self.x == 110:
+                print("hi")
+"""                
                 firstnumber = random.randint(0, 4)
                 if firstnumber == 1:
                     self.xdirection *= 1
@@ -110,6 +112,7 @@ class Obstacle(Sprite):
                 elif firstnumber == 4:
                     self.xdirection = 0
                     self.ydirection = -1
+"""                    
 
 # Set up event handlers for the app
 class Twoplayer(App):
