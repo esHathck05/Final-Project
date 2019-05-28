@@ -238,15 +238,14 @@ Player 1 Wins!""")
                 self.ghost.y = 0
                 
             if self.obs.x < 0:
-                self.obs.x = int(myapp.width) - 50
+                self.obs.xdirection *= -1
             if self.obs.x > int(myapp.width) - 50:
-                self.obs.x = 0
+                self.obs.xdirection *= -1
                 
             if self.obs.y < 0:
-                self.obs.y = int(myapp.height) - 50
                 self.obs.ydirection *= -1
             if self.obs.y > int(myapp.height) - 50:
-                self.obs.y = 0
+                self.obs.ydirection *= -1
             
 print("To Control Player 1 (yellow): WASD")
 print("To Control Player 2 (blue): Arrow Keys")
