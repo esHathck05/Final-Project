@@ -92,24 +92,6 @@ class Obstacle(Sprite):
         self.ydirection = 0
         self.go = True
 
-    def step(self):
-        self.x += self.xdirection
-        self.y += self.ydirection
-        if self.y == int(myapp.height)/2 - 29 and self.x == 110:
-            firstnumber = int(random.randint(0, 5))
-            if firstnumber == 1:
-                self.xdirection *= 1
-                self.ydirection *= 1
-            elif firstnumber == 2:
-                self.xdirection *= -1
-                self.ydirection = 0
-            elif firstnumber == 3:
-                self.xdirection *= -1
-                self.ydirection *= -1
-            elif firstnumber == 4:
-                self.xdirection = 0
-                self.ydirection = -1
-
 class Twoplayer(App):
     def __init__(self):
         super().__init__()
@@ -243,6 +225,23 @@ Player 1 Wins!""")
                 self.obs.ydirection *= -1
             if self.obs.y > int(myapp.height) - 50:
                 self.obs.ydirection *= -1
+        
+        self.obs.x += self.obs.xdirection
+        self.obs.y += self.obs.ydirection
+        if self.obs.y == int(myapp.height)/2 - 29 and self.obs.x == 100:
+            firstnumber = int(random.randint(0, 5))
+            if firstnumber == 1:
+                self.xobs.direction *= 1
+                self.yobs.direction *= 1
+            elif firstnumber == 2:
+                self.xobs.direction *= -1
+                self.yobs.direction = 0
+            elif firstnumber == 3:
+                self.xobs.direction *= -1
+                self.yobs.direction *= -1
+            elif firstnumber == 4:
+                self.xobs.direction = 0
+                self.yobs.direction = -1
             
 print("To Control Player 1 (yellow): WASD")
 print("To Control Player 2 (blue): Arrow Keys")
