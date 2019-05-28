@@ -93,6 +93,8 @@ class Obstacle(Sprite):
         self.go = True
 
     def step(self):
+        self.x += self.xdirection
+        self.y += self.ydirection
         if self.y == 110:
             if self.x == int(myapp.width)/2 - 10:
                 if random.randint(0, 4) == 1:
