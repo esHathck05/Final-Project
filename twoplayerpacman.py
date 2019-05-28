@@ -165,7 +165,6 @@ class Twoplayer(App):
 Player 1 Wins!""")
 
         self.ghost.step()
-        self.obs.step()
         
         if self.ghost.pacisalive == True:
             self.pac.x += self.pac.xdirection
