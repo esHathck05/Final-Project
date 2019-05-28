@@ -95,8 +95,8 @@ class Obstacle(Sprite):
     def step(self):
         self.x += self.xdirection
         self.y += self.ydirection
-        if self.y == 100:
-            if self.x == int(myapp.width)/2 - 8:
+        if self.x == int(myapp.width)/2 - 8:
+            if self.y == 110:
                 if random.randint(0, 4) == 1:
                     self.xdirection *= 1
                     self.ydirection *= 1
