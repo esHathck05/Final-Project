@@ -59,19 +59,19 @@ class Ghost(Sprite):
     def move(self, key):
         if key == "left arrow":
             self.ydirection = 0
-            self.xdirection = -4.20
+            self.xdirection = -4.25
 
         elif key == "right arrow":
             self.ydirection = 0
-            self.xdirection = 4.20
+            self.xdirection = 4.25
                 
         elif key == "up arrow":
             self.xdirection = 0
-            self.ydirection = -4.20
+            self.ydirection = -4.25
             
         elif key == "down arrow":
             self.xdirection = 0
-            self.ydirection = 4.20
+            self.ydirection = 4.25
             
     def step(self):
         collides = self.collidingWithSprites(Pacman)
