@@ -1,4 +1,5 @@
 from ggame import App, Sprite, RectangleAsset, CircleAsset, EllipseAsset, LineStyle, Color
+import random
 
 myapp = App()
 
@@ -87,10 +88,14 @@ Player 2 Wins!""")
 class Obstacle(Sprite):
     def __init__(self, x, y, color, app):
         super().__init__(EllipseAsset(10, 10, LineStyle(0,Color(0, 1.0)), color), (x,y))
+        self.xdirection = 0
+        self.ydirection = 0
 
     def step(self):
         if self.y == 110:
             if self.x == 110:
+                if random.randint(0, 4) == 1:
+                    
 
 # Set up event handlers for the app
 class Twoplayer(App):
