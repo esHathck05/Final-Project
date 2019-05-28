@@ -95,6 +95,11 @@ class Obstacle(Sprite):
         if self.y == 110:
             if self.x == int(myapp.width)/2 - 10:
                 if random.randint(0, 4) == 1:
+                    self.xdirection *= -1
+                    self.ydirection = 0
+                elif random.rantint(0, 3) == 2:
+                    self.xdirection = 0
+                    self.ydirection *= -1
                     
                     
 
