@@ -90,7 +90,8 @@ class Obstacle(Sprite):
 
     def step(self):
         if self.y == 135:
-            if self.x == 
+            if self.x == 135:
+                
 
 # Set up event handlers for the app
 class Twoplayer(App):
