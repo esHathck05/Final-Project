@@ -84,6 +84,30 @@ class Ghost(Sprite):
                 print("""
 Player 2 Wins!""")
 
+class Obstacle(Sprite):
+    def __init__(self, x, y, color, app):
+        super().__init__(EllipseAsset(10, 10, LineStyle(0,Color(0, 1.0)), color), (x,y))
+            
+    def move(self, key):
+        if key == "left arrow":
+            self.ydirection = 0
+            self.xdirection = -4.25
+
+        elif key == "right arrow":
+            self.ydirection = 0
+            self.xdirection = 4.25
+                
+        elif key == "up arrow":
+            self.xdirection = 0
+            self.ydirection = -4.25
+            
+        elif key == "down arrow":
+            self.xdirection = 0
+            self.ydirection = 4.25
+            
+    def step(self):
+        
+
 # Set up event handlers for the app
 class Twoplayer(App):
     def __init__(self):
