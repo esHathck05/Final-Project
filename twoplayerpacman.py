@@ -88,13 +88,14 @@ Player 2 Wins!""")
 class Obstacle(Sprite):
     def __init__(self, x, y, color, app):
         super().__init__(EllipseAsset(10, 10, LineStyle(0,Color(0, 1.0)), color), (x,y))
-        self.xdirection = 0
+        self.xdirection = -4
         self.ydirection = 0
 
     def step(self):
         if self.y == 110:
-            if self.x == 110:
+            if self.x == int(myapp.width)/2 - 10:
                 if random.randint(0, 4) == 1:
+                    
                     
 
 # Set up event handlers for the app
