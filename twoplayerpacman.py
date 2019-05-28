@@ -99,7 +99,7 @@ class Obstacle(Sprite):
             if self.x == 110:
                 print("hi")
                
-                firstnumber = random.randint(0, 4)
+                firstnumber = int(random.randint(0, 5))
                 if firstnumber == 1:
                     self.xdirection *= 1
                     self.ydirection *= 1
