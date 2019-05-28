@@ -91,7 +91,7 @@ class Obstacle(Sprite):
         self.xdirection = -4
         self.ydirection = 0
         self.go = True
-
+"""
     def step(self):
         self.x += self.xdirection
         self.y += self.ydirection
@@ -112,7 +112,7 @@ class Obstacle(Sprite):
                 elif firstnumber == 4:
                     self.xdirection = 0
                     self.ydirection = -1
-                    
+"""                    
 
 # Set up event handlers for the app
 class Twoplayer(App):
@@ -121,7 +121,7 @@ class Twoplayer(App):
         self.score = 0
         self.pac = Pacman(110, 110, yellow, self)
         self.ghost = Ghost(int(myapp.width) - 157, int(myapp.height) - 150, blue, self)
-        self.obs = Obstacle(int(myapp.width)/2 - 8, int(myapp.height)/2 - 29, black, self)
+        # self.obs = Obstacle(int(myapp.width)/2 - 8, int(myapp.height)/2 - 29, black, self)
         myapp.listenKeyEvent('keydown', 'a', self.moveKey)
         myapp.listenKeyEvent('keydown', 'd', self.moveKey)
         myapp.listenKeyEvent('keydown', 'w', self.moveKey)
@@ -188,7 +188,7 @@ class Twoplayer(App):
 Player 1 Wins!""")
 
         self.ghost.step()
-        self.obs.step()
+        # self.obs.step()
         
         if self.ghost.pacisalive == True:
             self.pac.x += self.pac.xdirection
@@ -238,19 +238,19 @@ Player 1 Wins!""")
                 self.ghost.ydirection *= -1
             if self.ghost.y > int(myapp.height) - 30:
                 self.ghost.y = 0
-                
+"""                
             if self.obs.x < 0:
-                self.obs.x = int(myapp.width) - 30
+                self.obs.x = int(myapp.width) - 50
                 self.obs.xdirection *= -1
-            if self.obs.x > int(myapp.width) - 30:
+            if self.obs.x > int(myapp.width) - 50:
                 self.obs.x = 0
                 
             if self.obs.y < 0:
-                self.obs.y = int(myapp.height) - 30
+                self.obs.y = int(myapp.height) - 50
                 self.obs.ydirection *= -1
-            if self.obs.y > int(myapp.height) - 30:
+            if self.obs.y > int(myapp.height) - 50:
                 self.obs.y = 0
-            
+"""            
             
 print("To Control Player 1 (yellow): WASD")
 print("To Control Player 2 (blue): Arrow Keys")
