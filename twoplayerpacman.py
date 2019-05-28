@@ -95,23 +95,20 @@ class Obstacle(Sprite):
     def step(self):
         self.x += self.xdirection
         self.y += self.ydirection
-        if self.y == int(myapp.height)/2 - 29:
-            if self.x == 110:
-                print("hi")
-               
-                firstnumber = int(random.randint(0, 5))
-                if firstnumber == 1:
-                    self.xdirection *= 1
-                    self.ydirection *= 1
-                elif firstnumber == 2:
-                    self.xdirection *= -1
-                    self.ydirection = 0
-                elif firstnumber == 3:
-                    self.xdirection *= -1
-                    self.ydirection *= -1
-                elif firstnumber == 4:
-                    self.xdirection = 0
-                    self.ydirection = -1
+        if self.y == int(myapp.height)/2 - 29 and self.x == 110:
+            firstnumber = int(random.randint(0, 5))
+            if firstnumber == 1:
+                self.xdirection *= 1
+                self.ydirection *= 1
+            elif firstnumber == 2:
+                self.xdirection *= -1
+                self.ydirection = 0
+            elif firstnumber == 3:
+                self.xdirection *= -1
+                self.ydirection *= -1
+            elif firstnumber == 4:
+                self.xdirection = 0
+                self.ydirection = -1
 
 class Twoplayer(App):
     def __init__(self):
