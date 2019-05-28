@@ -101,9 +101,11 @@ class Obstacle(Sprite):
                     self.xdirection *= -1
                     self.ydirection = 0
                 elif random.randint(0, 3) == 3:
-                    
-                    
-                    
+                    self.xdirection *= -1
+                    self.ydirection *= -1
+                elif random.randint(0, 3) == 4:
+                    self.xdirection = 0
+                    self.ydirection = -1
 
 # Set up event handlers for the app
 class Twoplayer(App):
