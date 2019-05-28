@@ -91,7 +91,7 @@ class Obstacle(Sprite):
         self.xdirection = -4
         self.ydirection = 0
         self.go = True
-"""
+
     def step(self):
         self.x += self.xdirection
         self.y += self.ydirection
@@ -112,9 +112,7 @@ class Obstacle(Sprite):
                 elif firstnumber == 4:
                     self.xdirection = 0
                     self.ydirection = -1
-"""                    
 
-# Set up event handlers for the app
 class Twoplayer(App):
     def __init__(self):
         super().__init__()
@@ -241,7 +239,6 @@ Player 1 Wins!""")
                 
             if self.obs.x < 0:
                 self.obs.x = int(myapp.width) - 50
-                self.obs.xdirection *= -1
             if self.obs.x > int(myapp.width) - 50:
                 self.obs.x = 0
                 
