@@ -104,9 +104,6 @@ class Obstacle(Sprite):
         elif key == "down arrow":
             self.xdirection = 0
             self.ydirection = 4.25
-            
-    def step(self):
-        
 
 # Set up event handlers for the app
 class Twoplayer(App):
