@@ -228,9 +228,8 @@ Player 1 Wins!""")
         if self.ghost.pacisalive == True:
             self.obs.x += self.obs.xdirection
             self.obs.y += self.obs.ydirection
-            print(self.obs.y)
             if self.obs.y == int(myapp.height)/2 - 29.5:
-                if self.obs.x == 100:
+                if self.obs.x == 100 or self.obs:
                     firstnumber = int(random.randint(1, 4))
                     if firstnumber == 1:
                         self.obs.xdirection = 0
