@@ -234,12 +234,14 @@ Player 1 Wins!""")
                 self.obs.ydirection *= 1
             elif firstnumber == 2:
                 self.obs.xdirection = 4
+                self.obs.ydirection = 4
                 self.obs.xdirection *= -1
                 self.obs.ydirection = 0
             elif firstnumber == 3:
                 self.obs.xdirection *= -1
                 self.obs.ydirection *= -1
             elif firstnumber == 4:
+                self.obs.xdirection = 4
                 self.obs.ydirection = 4
                 self.obs.xdirection = 0
                 self.obs.ydirection *= -1
