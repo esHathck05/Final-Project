@@ -228,7 +228,7 @@ class Twoplayer(App):
         if self.ghost.pacisalive == True:
             self.obs.x += self.obs.xdirection
             self.obs.y += self.obs.ydirection
-            if self.obs.y == int(myapp.height)/2 - 29
+            if self.obs.y == int(myapp.height)/2 - 29:
                 if self.obs.x == 100.5:
                     firstnumber = int(random.randint(1, 4))
                     if firstnumber == 1:
