@@ -242,7 +242,7 @@ Player 1 Wins!""")
             elif firstnumber == 4:
                 self.obs.ydirection = 4
                 self.obs.xdirection = 0
-                self.obs.ydirection = -1
+                self.obs.ydirection *= -1
             
 print("To Control Player 1 (yellow): WASD")
 print("To Control Player 2 (blue): Arrow Keys")
