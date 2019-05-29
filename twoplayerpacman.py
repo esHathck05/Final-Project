@@ -88,7 +88,7 @@ Player 2 Wins!""")
 class Obstacle(Sprite):
     def __init__(self, x, y, color, app):
         super().__init__(RectangleAsset(50, 50, LineStyle(0,Color(0, 1.0)), color), (x,y))
-        self.xdirection = 4
+        self.xdirection = -4
         self.ydirection = 0
         self.go = True
 
@@ -228,6 +228,8 @@ class Twoplayer(App):
         if self.ghost.pacisalive == True:
             self.obs.x += self.obs.xdirection
             self.obs.y += self.obs.ydirection
+            print(self.obs.x)
+"""
             if self.obs.y == int(myapp.height)/2 - 29:
                 if self.obs.x == 100.5 or self.obs.x == 250.5:
                     firstnumber = int(random.randint(1, 4))
@@ -243,7 +245,7 @@ class Twoplayer(App):
                     elif firstnumber == 4:
                         self.obs.xdirection = 4
                         self.obs.ydirection = 0
-            
+"""            
 print("To Control Player 1 (yellow): WASD")
 print("To Control Player 2 (blue): Arrow Keys")
 print("Player 1 must collect 2000 points to win. Player 2 must destroy Player 1 to win.")
