@@ -88,7 +88,7 @@ Player 2 Wins!""")
 class Obstacle(Sprite):
     def __init__(self, x, y, color, app):
         super().__init__(RectangleAsset(50, 50, LineStyle(0,Color(0, 1.0)), color), (x,y))
-        self.xdirection = -4
+        self.xdirection = -5
         self.ydirection = 0
         self.go = True
 
@@ -98,7 +98,7 @@ class Twoplayer(App):
         self.score = 0
         self.pac = Pacman(110, 110, yellow, self)
         self.ghost = Ghost(int(myapp.width) - 157, int(myapp.height) - 150, blue, self)
-        self.obs = Obstacle(int(myapp.width)/2 - 8, int(myapp.height)/2 - 29, black, self)
+        self.obs = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29, black, self)
         myapp.listenKeyEvent('keydown', 'a', self.moveKey)
         myapp.listenKeyEvent('keydown', 'd', self.moveKey)
         myapp.listenKeyEvent('keydown', 'w', self.moveKey)
@@ -228,6 +228,7 @@ Player 1 Wins!""")
         if self.ghost.pacisalive == True:
             self.obs.x += self.obs.xdirection
             self.obs.y += self.obs.ydirection
+            print(self.obs.x)
             if self.obs.y == int(myapp.height)/2 - 29:
                 if self.obs.x == 100:
                     firstnumber = int(random.randint(1, 4))
