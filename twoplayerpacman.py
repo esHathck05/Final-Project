@@ -95,7 +95,7 @@ class Obstacle(Sprite):
 class Twoplayer(App):
     def __init__(self):
         super().__init__()
-        self.score = 0
+        self.score = 1
         self.pac = Pacman(110, 110, yellow, self)
         self.ghost = Ghost(int(myapp.width) - 157, int(myapp.height) - 150, blue, self)
         self.obs = Obstacle(int(myapp.width)/2 - 8, int(myapp.height)/2 - 29, black, self)
