@@ -225,26 +225,27 @@ Player 1 Wins!""")
             if self.obs.y > int(myapp.height) - 50:
                 self.obs.ydirection *= -1
         
-        self.obs.x += self.obs.xdirection
-        self.obs.y += self.obs.ydirection
-        if self.obs.y == int(myapp.height)/2 - 29 and self.obs.x == 100.5:
-            firstnumber = int(random.randint(0, 5))
-            if firstnumber == 1:
-                self.obs.xdirection *= 1
-                self.obs.ydirection *= 1
-            elif firstnumber == 2:
-                self.obs.xdirection = 4
-                self.obs.ydirection = 4
-                self.obs.xdirection *= -1
-                self.obs.ydirection = 0
-            elif firstnumber == 3:
-                self.obs.xdirection *= -1
-                self.obs.ydirection *= -1
-            elif firstnumber == 4:
-                self.obs.xdirection = 4
-                self.obs.ydirection = 4
-                self.obs.xdirection = 0
-                self.obs.ydirection *= -1
+        if self.ghost.pacisalive == True:
+            self.obs.x += self.obs.xdirection
+            self.obs.y += self.obs.ydirection
+            if self.obs.y == int(myapp.height)/2 - 29 and self.obs.x == 100.5:
+                firstnumber = int(random.randint(0, 5))
+                if firstnumber == 1:
+                    self.obs.xdirection *= 1
+                    self.obs.ydirection *= 1
+                elif firstnumber == 2:
+                    self.obs.xdirection = 4
+                    self.obs.ydirection = 4
+                    self.obs.xdirection *= -1
+                    self.obs.ydirection = 0
+                elif firstnumber == 3:
+                    self.obs.xdirection *= -1
+                    self.obs.ydirection *= -1
+                elif firstnumber == 4:
+                    self.obs.xdirection = 4
+                    self.obs.ydirection = 4
+                    self.obs.xdirection = 0
+                    self.obs.ydirection *= -1
             
 print("To Control Player 1 (yellow): WASD")
 print("To Control Player 2 (blue): Arrow Keys")
