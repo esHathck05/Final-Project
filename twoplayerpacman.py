@@ -155,14 +155,14 @@ class Twoplayer(App):
         down(Pacman)
         
     def step(self):
-        #self.score += 1
-        #if self.score % 100 == 0 and self.ghost.stopscore == False:
-        #    print(int(self.score))
-        #if self.score == 2000:
-        #    self.ghost.stopscore = True
-        #    self.ghost.pacisalive = False
-        #    print("""
-#Player 1 Wins!""")
+        self.score += 1
+        if self.score % 100 == 0 and self.ghost.stopscore == False:
+            print(int(self.score))
+        if self.score == 2000:
+            self.ghost.stopscore = True
+            self.ghost.pacisalive = False
+            print("""
+Player 1 Wins!""")
 
         self.ghost.step()
         
@@ -228,10 +228,8 @@ class Twoplayer(App):
         if self.ghost.pacisalive == True:
             self.obs.x += self.obs.xdirection
             self.obs.y += self.obs.ydirection
-            print(self.obs.x)
-
             if self.obs.y == int(myapp.height)/2 - 29:
-                if self.obs.x == 100.5 or self.obs.x == 250.5:
+                if self.obs.x == 100:
                     firstnumber = int(random.randint(1, 4))
                     if firstnumber == 1:
                         self.obs.xdirection = 0
