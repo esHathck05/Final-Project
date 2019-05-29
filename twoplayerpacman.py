@@ -229,7 +229,7 @@ class Twoplayer(App):
             self.obs.x += self.obs.xdirection
             self.obs.y += self.obs.ydirection
             print(self.obs.x)
-"""
+
             if self.obs.y == int(myapp.height)/2 - 29:
                 if self.obs.x == 100.5 or self.obs.x == 250.5:
                     firstnumber = int(random.randint(1, 4))
@@ -245,7 +245,7 @@ class Twoplayer(App):
                     elif firstnumber == 4:
                         self.obs.xdirection = 4
                         self.obs.ydirection = 0
-"""            
+                        
 print("To Control Player 1 (yellow): WASD")
 print("To Control Player 2 (blue): Arrow Keys")
 print("Player 1 must collect 2000 points to win. Player 2 must destroy Player 1 to win.")
