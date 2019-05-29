@@ -229,7 +229,7 @@ Player 1 Wins!""")
             self.obs.x += self.obs.xdirection
             self.obs.y += self.obs.ydirection
             if self.obs.y == int(myapp.height)/2 - 29.5:
-                if self.obs.x == 100 or self.obs.x == 250 or self.obs.x == 400 or self.obs.x == 550 or self.obs.x == 700:
+                if self.obs.x == 100 or self.obs.x == 250 or self.obs.x == 400 or self.obs.x == 550 or self.obs.x == 700 or self.obs.x == 950:
                     firstnumber = int(random.randint(1, 4))
                     if firstnumber == 1:
                         self.obs.xdirection = 0
