@@ -229,7 +229,7 @@ class Twoplayer(App):
             self.obs.x += self.obs.xdirection
             self.obs.y += self.obs.ydirection
             if self.obs.y == int(myapp.height)/2 - 29:
-                if self.obs.x == 100.5:
+                if self.obs.x == 100.5 or 250.5 or 400.5:
                     firstnumber = int(random.randint(1, 4))
                     if firstnumber == 1:
                         self.obs.xdirection = 0
