@@ -98,7 +98,7 @@ class Twoplayer(App):
         self.score = 0
         self.pac = Pacman(110, 110, yellow, self)
         self.ghost = Ghost(int(myapp.width) - 157, int(myapp.height) - 150, blue, self)
-        self.obs = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29, black, self)
+        self.obs = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, black, self)
         myapp.listenKeyEvent('keydown', 'a', self.moveKey)
         myapp.listenKeyEvent('keydown', 'd', self.moveKey)
         myapp.listenKeyEvent('keydown', 'w', self.moveKey)
@@ -228,8 +228,8 @@ Player 1 Wins!""")
         if self.ghost.pacisalive == True:
             self.obs.x += self.obs.xdirection
             self.obs.y += self.obs.ydirection
-            print(self.obs.x)
-            if self.obs.y == int(myapp.height)/2 - 29:
+            print(self.obs.y)
+            if self.obs.y == int(myapp.height)/2 - 29.5:
                 if self.obs.x == 100:
                     firstnumber = int(random.randint(1, 4))
                     if firstnumber == 1:
