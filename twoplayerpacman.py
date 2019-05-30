@@ -7,6 +7,7 @@ black = Color(0, 1)
 yellow = Color(0xffff00, 1)
 blue = Color(0x6495ed, 1)
 white = Color(0xfffff0, 1.0)
+red = Color(0xff0000, 1.0)
 noline = LineStyle(0, black)
 
 # define colors and line style
@@ -118,8 +119,8 @@ class Twoplayer(App):
         self.score = 0
         self.pac = Pacman(110, 110, yellow, self)
         self.ghost = Ghost(int(myapp.width) - 157, int(myapp.height) - 150, blue, self)
-        self.obs = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, black, self)
-        self.obs2 = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, black, self)
+        self.obs = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, red, self)
+        self.obs2 = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, red, self)
         myapp.listenKeyEvent('keydown', 'a', self.moveKey)
         myapp.listenKeyEvent('keydown', 'd', self.moveKey)
         myapp.listenKeyEvent('keydown', 'w', self.moveKey)
