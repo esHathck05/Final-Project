@@ -91,6 +91,17 @@ class Obstacle(Sprite):
         self.xdirection = -5
         self.ydirection = 0
         self.go = True
+        
+    def step(self):
+        collides = self.collidingWithSprites(Pacman)
+        if len(collides):
+            collides[0].destroy()
+            self.pacisalive = False
+            living['Pacman'] = living['Pacman'] - 1
+            if living['Pacman'] == 0:
+                self.stopscore = True
+                print("""
+Player 2 Wins!""")
 
 class Twoplayer(App):
     def __init__(self):
@@ -165,6 +176,7 @@ class Twoplayer(App):
 Player 1 Wins!""")
 
         self.ghost.step()
+        self.obs.step()
         
         if self.ghost.pacisalive == True:
             self.pac.x += self.pac.xdirection
