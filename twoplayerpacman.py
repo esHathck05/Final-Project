@@ -9,13 +9,15 @@ blue = Color(0x6495ed, 1)
 white = Color(0xfffff0, 1.0)
 red = Color(0xff0000, 1.0)
 purple = Color(0x800080, 1.0)
+green = Color(0x00ff00, 1.0)
+gray = Color(0x888888, 0.5)
 noline = LineStyle(0, black)
 
 # define colors and line style
 black = Color(0, 1)
 noline = LineStyle(0, black)
 # a rectangle asset and sprite to use as background
-bg_asset = RectangleAsset(myapp.width, myapp.height, noline, purple)
+bg_asset = RectangleAsset(myapp.width, myapp.height, noline, white)
 bg = Sprite(bg_asset, (0,0))
 
 living = {'Pacman':1}
@@ -121,8 +123,8 @@ class Twoplayer(App):
         self.pac = Pacman(110, 110, yellow, self)
         self.ghost = Ghost(int(myapp.width) - 157, int(myapp.height) - 150, blue, self)
         self.obs = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, red, self)
-        self.obs2 = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, red, self)
-        self.obs3 = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, red, self)
+        self.obs2 = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, purple, self)
+        self.obs3 = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, green, self)
         myapp.listenKeyEvent('keydown', 'a', self.moveKey)
         myapp.listenKeyEvent('keydown', 'd', self.moveKey)
         myapp.listenKeyEvent('keydown', 'w', self.moveKey)
