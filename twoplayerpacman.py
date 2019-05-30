@@ -206,7 +206,7 @@ Player 1 Wins!""")
                 
             if self.ghost.y + self.ghost.height > myapp.height or self.ghost.y < 0:
                 self.ghost.ydirection *= -1
-                
+        # for sprites to bounce off of obstacles        
             if self.pac.collidingWithSprites(Wall):
                 self.pac.xdirection *= -1
                 self.pac.ydirection *= -1
@@ -214,6 +214,7 @@ Player 1 Wins!""")
                 self.ghost.xdirection *= -1
                 self.ghost.ydirection *= -1
                 
+        # for pac and ghost to both spawn on other sides of wall if they touch them        
             if self.pac.x < 0:
                 self.pac.x = int(myapp.width) - 30
                 self.pac.xdirection *= -1
