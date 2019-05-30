@@ -401,7 +401,8 @@ Player 1 Wins!""")
                         
 print("To Control Player 1 (yellow): WASD")
 print("To Control Player 2 (blue): Arrow Keys")
-print("Player 1 must collect 2000 points to win. Player 2 must destroy Player 1 to win.")
+print("""Player 1 must collect 2000 points to win. Player 2 must destroy Player 1 to win.
+If either player runs into the colored squares, they die.""")
 print("""
 Player 1 Score: """)
         
