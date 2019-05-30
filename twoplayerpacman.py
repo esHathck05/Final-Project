@@ -126,7 +126,7 @@ class Twoplayer(App):
         self.pac = Pacman(110, 110, yellow, self)
         self.ghost = Ghost(int(myapp.width) - 157, int(myapp.height) - 150, blue, self)
         self.obs = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, red, self)
-        self.obs2 = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, gray, self)
+        self.obs2 = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, purple, self)
         self.obs3 = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, green, self)
         
         myapp.listenKeyEvent('keydown', 'a', self.moveKey)
