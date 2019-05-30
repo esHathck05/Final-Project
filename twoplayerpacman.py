@@ -264,7 +264,7 @@ Player 1 Wins!""")
             if self.obs2.y > int(myapp.height) - 50:
                 self.obs2.ydirection *= -1
                 
-            # for the first random obstacle
+        # for the first random obstacle
         if self.ghost.pacisalive == True:
             self.obs.x += self.obs.xdirection
             self.obs.y += self.obs.ydirection
@@ -304,7 +304,7 @@ Player 2 Wins!""")
                     print("""
 Player 1 Wins!""")
 
-            # for the second random obstacle
+        # for the second random obstacle
         if self.ghost.pacisalive == True:
             self.obs2.x += self.obs2.xdirection
             self.obs2.y += self.obs2.ydirection
@@ -312,17 +312,17 @@ Player 1 Wins!""")
                 if self.obs2.x == 100 or self.obs2.x == 250 or self.obs2.x == 400 or self.obs2.x == 550 or self.obs2.x == 700 or self.obs2.x == 850:
                     firstnumber = int(random.randint(1, 4))
                     if firstnumber == 1:
-                        self.obs.xdirection = 0
-                        self.obs.ydirection = 5
+                        self.obs2.xdirection = 0
+                        self.obs2.ydirection = 5
                     elif firstnumber == 2:
-                        self.obs.xdirection = 0
-                        self.obs.ydirection = -5
+                        self.obs2.xdirection = 0
+                        self.obs2.ydirection = -5
                     elif firstnumber == 3:
-                        self.obs.xdirection = -5
-                        self.obs.ydirection = 0
+                        self.obs2.xdirection = -5
+                        self.obs2.ydirection = 0
                     elif firstnumber == 4:
-                        self.obs.xdirection = 5
-                        self.obs.ydirection = 0
+                        self.obs2.xdirection = 5
+                        self.obs2.ydirection = 0
                         
         if self.ghost.pacisalive == True:
             collides4 = self.obs2.collidingWithSprites(Pacman)
