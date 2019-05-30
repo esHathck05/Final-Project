@@ -15,13 +15,13 @@ noline = LineStyle(0, black)
 black = Color(0, 1)
 noline = LineStyle(0, black)
 # a rectangle asset and sprite to use as background
-bg_asset = RectangleAsset(myapp.width, myapp.height, noline, white)
+bg_asset = RectangleAsset(myapp.width, myapp.height, noline, purple)
 bg = Sprite(bg_asset, (0,0))
 
 living = {'Pacman':1}
 
 class Wall(Sprite):
-    rect = RectangleAsset(100, 100, noline, purple)
+    rect = RectangleAsset(100, 100, noline, black)
     
     def __init__(self, position):
         super().__init__(Wall.rect, position)
