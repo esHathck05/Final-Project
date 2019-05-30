@@ -268,6 +268,17 @@ Player 1 Wins!""")
             if self.obs2.y > int(myapp.height) - 50:
                 self.obs2.ydirection *= -1
                 
+        # for third obstacle to bounce off walls       
+            if self.obs3.x < 0:
+                self.obs3.xdirection *= -1
+            if self.obs3.x > int(myapp.width) - 50:
+                self.obs3.xdirection *= -1
+                
+            if self.obs3.y < 0:
+                self.obs3.ydirection *= -1
+            if self.obs3.y > int(myapp.height) - 50:
+                self.obs3.ydirection *= -1
+                
         # for the first random obstacle
         if self.ghost.pacisalive == True:
             self.obs.x += self.obs.xdirection
