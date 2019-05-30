@@ -8,6 +8,7 @@ yellow = Color(0xffff00, 1)
 blue = Color(0x6495ed, 1)
 white = Color(0xfffff0, 1.0)
 red = Color(0xff0000, 1.0)
+purple = Color(0x800080, 1.0)
 noline = LineStyle(0, black)
 
 # define colors and line style
@@ -20,7 +21,7 @@ bg = Sprite(bg_asset, (0,0))
 living = {'Pacman':1}
 
 class Wall(Sprite):
-    rect = RectangleAsset(100, 100, noline, black)
+    rect = RectangleAsset(100, 100, noline, purple)
     
     def __init__(self, position):
         super().__init__(Wall.rect, position)
