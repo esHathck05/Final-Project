@@ -365,17 +365,17 @@ Player 1 Wins!""")
             self.obs3.y += self.obs3.ydirection
             if self.obs3.y == int(myapp.height)/2 - 179.5 or self.obs3.y == int(myapp.height)/2 - 29.5 or self.obs3.y == int(myapp.height)/2 + 120.5:
                 if self.obs3.x == 100 or self.obs3.x == 250 or self.obs3.x == 400 or self.obs3.x == 550 or self.obs3.x == 700 or self.obs3.x == 850:
-                    secondnumber = int(random.randint(1, 4))
-                    if secondnumber == 1:
+                    thirdnumber = int(random.randint(1, 4))
+                    if thirdnumber == 1:
                         self.obs3.xdirection = 0
                         self.obs3.ydirection = 5
-                    elif secondnumber == 2:
+                    elif thirdnumber == 2:
                         self.obs3.xdirection = 0
                         self.obs3.ydirection = -5
-                    elif secondnumber == 3:
+                    elif thirdnumber == 3:
                         self.obs3.xdirection = -5
                         self.obs3.ydirection = 0
-                    elif secondnumber == 4:
+                    elif thirdnumber == 4:
                         self.obs3.xdirection = 5
                         self.obs3.ydirection = 0
                         
