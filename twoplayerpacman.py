@@ -237,7 +237,7 @@ Player 1 Wins!""")
                 self.ghost.ydirection *= -1
             if self.ghost.y > int(myapp.height) - 30:
                 self.ghost.y = 0
-                
+        # for first obstacle to bounce off walls        
             if self.obs.x < 0:
                 self.obs.xdirection *= -1
             if self.obs.x > int(myapp.width) - 50:
@@ -247,7 +247,19 @@ Player 1 Wins!""")
                 self.obs.ydirection *= -1
             if self.obs.y > int(myapp.height) - 50:
                 self.obs.ydirection *= -1
-        
+                
+        # for second obstacle to bounce off walls       
+            if self.obs2.x < 0:
+                self.obs2.xdirection *= -1
+            if self.obs2.x > int(myapp.width) - 50:
+                self.obs2.xdirection *= -1
+                
+            if self.obs2.y < 0:
+                self.obs2.ydirection *= -1
+            if self.obs2.y > int(myapp.height) - 50:
+                self.obs2.ydirection *= -1
+                
+            # for the first random obstacle
         if self.ghost.pacisalive == True:
             self.obs.x += self.obs.xdirection
             self.obs.y += self.obs.ydirection
@@ -287,6 +299,7 @@ Player 2 Wins!""")
                     print("""
 Player 1 Wins!""")
 
+            # for the second random obstacle
         if self.ghost.pacisalive == True:
             self.obs2.x += self.obs2.xdirection
             self.obs2.y += self.obs2.ydirection
