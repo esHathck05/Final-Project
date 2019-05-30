@@ -284,7 +284,7 @@ Player 2 Wins!""")
                 if living['Pacman'] == 0:
                     self.stopscore = True
                     print("""
-    Player 1 Wins!""")
+Player 1 Wins!""")
                         
 print("To Control Player 1 (yellow): WASD")
 print("To Control Player 2 (blue): Arrow Keys")
