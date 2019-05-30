@@ -119,6 +119,7 @@ class Twoplayer(App):
         self.pac = Pacman(110, 110, yellow, self)
         self.ghost = Ghost(int(myapp.width) - 157, int(myapp.height) - 150, blue, self)
         self.obs = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, black, self)
+        self.obs2 = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, black, self)
         myapp.listenKeyEvent('keydown', 'a', self.moveKey)
         myapp.listenKeyEvent('keydown', 'd', self.moveKey)
         myapp.listenKeyEvent('keydown', 'w', self.moveKey)
@@ -251,6 +252,45 @@ Player 1 Wins!""")
             self.obs.x += self.obs.xdirection
             self.obs.y += self.obs.ydirection
             if self.obs.y == int(myapp.height)/2 - 179.5 or self.obs.y == int(myapp.height)/2 - 29.5 or self.obs.y == int(myapp.height)/2 + 120.5:
+                if self.obs.x == 100 or self.obs.x == 250 or self.obs.x == 400 or self.obs.x == 550 or self.obs.x == 700 or self.obs.x == 850:
+                    firstnumber = int(random.randint(1, 4))
+                    if firstnumber == 1:
+                        self.obs.xdirection = 0
+                        self.obs.ydirection = 5
+                    elif firstnumber == 2:
+                        self.obs.xdirection = 0
+                        self.obs.ydirection = -5
+                    elif firstnumber == 3:
+                        self.obs.xdirection = -5
+                        self.obs.ydirection = 0
+                    elif firstnumber == 4:
+                        self.obs.xdirection = 5
+                        self.obs.ydirection = 0
+                        
+        if self.ghost.pacisalive == True:
+            collides2 = self.obs.collidingWithSprites(Pacman)
+            if len(collides2):
+                collides2[0].destroy()
+                self.ghost.pacisalive = False
+                living['Pacman'] = living['Pacman'] - 1
+                if living['Pacman'] == 0:
+                    self.stopscore = True
+                    print("""
+Player 2 Wins!""")
+            collides3 = self.obs.collidingWithSprites(Ghost)
+            if len(collides3):
+                collides3[0].destroy()
+                self.ghost.pacisalive = False
+                living['Pacman'] = living['Pacman'] - 1
+                if living['Pacman'] == 0:
+                    self.stopscore = True
+                    print("""
+Player 1 Wins!""")
+
+        if self.ghost.pacisalive == True:
+            self.obs2.x += self.obs2.xdirection
+            self.obs2.y += self.obs2.ydirection
+            if self.obs2.y == int(myapp.height)/2 - 179.5 or self.obs2.y == int(myapp.height)/2 - 29.5 or self.obs2.y == int(myapp.height)/2 + 120.5:
                 if self.obs.x == 100 or self.obs.x == 250 or self.obs.x == 400 or self.obs.x == 550 or self.obs.x == 700 or self.obs.x == 850:
                     firstnumber = int(random.randint(1, 4))
                     if firstnumber == 1:
