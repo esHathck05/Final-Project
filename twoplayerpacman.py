@@ -310,17 +310,17 @@ Player 1 Wins!""")
             self.obs2.y += self.obs2.ydirection
             if self.obs2.y == int(myapp.height)/2 - 179.5 or self.obs2.y == int(myapp.height)/2 - 29.5 or self.obs2.y == int(myapp.height)/2 + 120.5:
                 if self.obs2.x == 100 or self.obs2.x == 250 or self.obs2.x == 400 or self.obs2.x == 550 or self.obs2.x == 700 or self.obs2.x == 850:
-                    firstnumber = int(random.randint(1, 4))
-                    if firstnumber == 1:
+                    secondnumber = int(random.randint(1, 4))
+                    if secondnumber == 1:
                         self.obs2.xdirection = 0
                         self.obs2.ydirection = 5
-                    elif firstnumber == 2:
+                    elif secondnumber == 2:
                         self.obs2.xdirection = 0
                         self.obs2.ydirection = -5
-                    elif firstnumber == 3:
+                    elif secondnumber == 3:
                         self.obs2.xdirection = -5
                         self.obs2.ydirection = 0
-                    elif firstnumber == 4:
+                    elif secondnumber == 4:
                         self.obs2.xdirection = 5
                         self.obs2.ydirection = 0
                         
