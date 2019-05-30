@@ -265,6 +265,26 @@ Player 1 Wins!""")
                         self.obs.xdirection = 5
                         self.obs.ydirection = 0
                         
+        if self.ghost.pacisalive == True:
+            collides2 = self.collidingWithSprites(Pacman)
+            if len(collides2):
+                collides2[0].destroy()
+                self.ghost.pacisalive = False
+                living['Pacman'] = living['Pacman'] - 1
+                if living['Pacman'] == 0:
+                    self.stopscore = True
+                    print("""
+Player 2 Wins!""")
+            collides3 = self.collidingWithSprites(Ghost)
+            if len(collides3):
+                collides3[0].destroy()
+                self.ghost.pacisalive = False
+                living['Pacman'] = living['Pacman'] - 1
+                if living['Pacman'] == 0:
+                    self.stopscore = True
+                    print("""
+    Player 1 Wins!""")
+                        
 print("To Control Player 1 (yellow): WASD")
 print("To Control Player 2 (blue): Arrow Keys")
 print("Player 1 must collect 2000 points to win. Player 2 must destroy Player 1 to win.")
