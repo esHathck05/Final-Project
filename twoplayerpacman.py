@@ -22,12 +22,13 @@ bg = Sprite(bg_asset, (0,0))
 
 living = {'Pacman':1}
 
+#wall sprite
 class Wall(Sprite):
     rect = RectangleAsset(100, 100, noline, black)
     
     def __init__(self, position):
         super().__init__(Wall.rect, position)
-
+# player 1 sprite
 class Pacman(Sprite):
     def __init__(self, x, y, color, app):
         super().__init__(EllipseAsset(12, 12, LineStyle(0,Color(0, 1.0)), color), (x, y))
@@ -51,7 +52,7 @@ class Pacman(Sprite):
         elif key == "s":
             self.xdirection = 0
             self.ydirection = 4
-
+# player 2 sprite
 class Ghost(Sprite):
     def __init__(self, x, y, color, app):
         super().__init__(EllipseAsset(12, 12, LineStyle(0,Color(0, 1.0)), color), (x,y))
@@ -89,6 +90,7 @@ class Ghost(Sprite):
                 print("""
 Player 2 Wins!""")
 
+# base for other enemy "ghosts" sprites
 class Obstacle(Sprite):
     def __init__(self, x, y, color, app):
         super().__init__(RectangleAsset(50, 50, LineStyle(0,Color(0, 1.0)), color), (x,y))
@@ -120,11 +122,13 @@ class Twoplayer(App):
     def __init__(self):
         super().__init__()
         self.score = 0
+            # where all of the sprites spawn
         self.pac = Pacman(110, 110, yellow, self)
         self.ghost = Ghost(int(myapp.width) - 157, int(myapp.height) - 150, blue, self)
         self.obs = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, red, self)
         self.obs2 = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, gray, self)
         self.obs3 = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, green, self)
+        
         myapp.listenKeyEvent('keydown', 'a', self.moveKey)
         myapp.listenKeyEvent('keydown', 'd', self.moveKey)
         myapp.listenKeyEvent('keydown', 'w', self.moveKey)
@@ -134,6 +138,7 @@ class Twoplayer(App):
         myapp.listenKeyEvent('keydown', 'up arrow', self.moveKey)
         myapp.listenKeyEvent('keydown', 'down arrow', self.moveKey)
 
+            # spawning wall sprites
         for x in range(0, 1000, 150):
             Wall((0, x))
         for x in range(0, 1000, 150):
@@ -200,7 +205,7 @@ Player 1 Wins!""")
             self.ghost.x += self.ghost.xdirection
             self.ghost.y += self.ghost.ydirection
         
-        # for some reason, this is necessary for sprites to go through the borders of the screen on the other side
+        # for some reason this is necessary for sprites to go through the borders of the screen on the other side
             if self.pac.x + self.pac.width > myapp.width or self.pac.x < 0:
                 self.pac.xdirection *= -1
         
