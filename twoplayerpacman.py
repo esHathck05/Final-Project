@@ -23,7 +23,7 @@ bg = Sprite(bg_asset, (0,0))
 living = {'Pacman':1}
 
 class Wall(Sprite):
-    rect = RectangleAsset(100, 100, noline, purple)
+    rect = RectangleAsset(100, 100, noline, black)
     
     def __init__(self, position):
         super().__init__(Wall.rect, position)
