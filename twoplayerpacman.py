@@ -266,7 +266,7 @@ Player 1 Wins!""")
                         self.obs.ydirection = 0
                         
         if self.ghost.pacisalive == True:
-            collides2 = self.collidingWithSprites(Pacman)
+            collides2 = self.obs.collidingWithSprites(Pacman)
             if len(collides2):
                 collides2[0].destroy()
                 self.ghost.pacisalive = False
@@ -275,7 +275,7 @@ Player 1 Wins!""")
                     self.stopscore = True
                     print("""
 Player 2 Wins!""")
-            collides3 = self.collidingWithSprites(Ghost)
+            collides3 = self.obs.collidingWithSprites(Ghost)
             if len(collides3):
                 collides3[0].destroy()
                 self.ghost.pacisalive = False
