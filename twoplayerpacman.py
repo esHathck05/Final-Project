@@ -102,6 +102,15 @@ class Obstacle(Sprite):
                 self.stopscore = True
                 print("""
 Player 2 Wins!""")
+        collides2 = self.collidingWithSprites(Ghost)
+        if len(collides2):
+            collides2[0].destroy()
+            self.pacisalive = False
+            living['Pacman'] = living['Pacman'] - 1
+            if living['Pacman'] == 0:
+                self.stopscore = True
+                print("""
+Player 1 Wins!""")
 
 class Twoplayer(App):
     def __init__(self):
