@@ -10,7 +10,7 @@ white = Color(0xfffff0, 1.0)
 red = Color(0xff0000, 1.0)
 purple = Color(0x800080, 1.0)
 green = Color(0x00ff00, 1.0)
-gray = Color(0x888888, 0.5)
+gray = Color(0x888888, 1.0)
 noline = LineStyle(0, black)
 
 # define colors and line style
