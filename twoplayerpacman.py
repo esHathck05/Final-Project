@@ -206,7 +206,8 @@ Player 1 Wins!""")
             self.ghost.y += self.ghost.ydirection
         
         # for some reason this is necessary for sprites to go through the borders of the screen on the other side
-            if self.pac.x + self.pac.width > myapp.width or self.pac.x < 0:
+
+            """ if self.pac.x + self.pac.width > myapp.width or self.pac.x < 0:
                 self.pac.xdirection *= -1
         
             if self.pac.y + self.pac.height > myapp.height or self.pac.y < 0:
@@ -217,7 +218,8 @@ Player 1 Wins!""")
                 
             if self.ghost.y + self.ghost.height > myapp.height or self.ghost.y < 0:
                 self.ghost.ydirection *= -1
-                
+"""
+
         # for sprites to bounce off of obstacles        
             if self.pac.collidingWithSprites(Wall):
                 self.pac.xdirection *= -1
@@ -229,25 +231,21 @@ Player 1 Wins!""")
         # for pac and ghost to both spawn on other sides of wall if they touch them        
             if self.pac.x < 0:
                 self.pac.x = int(myapp.width) - 30
-                self.pac.xdirection *= -1
             if self.pac.x > int(myapp.width) - 30:
                 self.pac.x = 0
                 
             if self.pac.y < 0:
                 self.pac.y = int(myapp.height) - 30
-                self.pac.ydirection *= -1
             if self.pac.y > int(myapp.height) - 30:
                 self.pac.y = 0
                 
             if self.ghost.x < 0:
                 self.ghost.x = int(myapp.width) - 30
-                self.ghost.xdirection *= -1
             if self.ghost.x > int(myapp.width) - 30:
                 self.ghost.x = 0
                 
             if self.ghost.y < 0:
                 self.ghost.y = int(myapp.height) - 30
-                self.ghost.ydirection *= -1
             if self.ghost.y > int(myapp.height) - 30:
                 self.ghost.y = 0
                 
