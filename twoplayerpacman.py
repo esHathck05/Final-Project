@@ -167,8 +167,9 @@ class Twoplayer(App):
     def moveKey(self, event):
         if self.pac:
             self.pac.move(event.key)
-        if self.ghost:
-            self.ghost.move(event.key)
+        if gamemode == 2 or gamemode == 3:
+            if self.ghost:
+                self.ghost.move(event.key)
             
     if gamemode == 2 or gamemode == 3:        
         def leftKey(event):
@@ -197,18 +198,20 @@ class Twoplayer(App):
         down(Pacman)
         
     def step(self):
-        if self.ghost.pacisalive == True:    
-            self.score += 2
-            if self.score % 100 == 0 and self.ghost.stopscore == False:
-                print(int(self.score))
-            if self.score == 2000:
-                self.ghost.stopscore = True
-                self.ghost.pacisalive = False
-                print("""
+        if gamemode == 2 or gamemode == 3:
+            if self.ghost.pacisalive == True:    
+                self.score += 2
+                if self.score % 100 == 0 and self.ghost.stopscore == False:
+                    print(int(self.score))
+                if self.score == 2000:
+                    self.ghost.stopscore = True
+                    self.ghost.pacisalive = False
+                    print("""
 Player 1 Wins!""")
 
-        self.ghost.step()
-        self.obs.step()
+        if gamemode == 2 or gamemode == 3:
+            self.ghost.step()
+            self.obs.step()
         
         if self.ghost.pacisalive == True:
             self.pac.x += self.pac.xdirection
