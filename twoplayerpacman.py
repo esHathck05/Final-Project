@@ -3,6 +3,8 @@ import random
 
 myapp = App()
 
+# add different modes (practice mode, no moving obs mode, moving obs mode), user can choose number of obs
+
 black = Color(0, 1)
 yellow = Color(0xffff00, 1)
 blue = Color(0x6495ed, 1)
@@ -272,6 +274,7 @@ Player 1 Wins!""")
             self.obs.x += self.obs.xdirection
             self.obs.y += self.obs.ydirection
             if self.obs.y == int(myapp.height)/2 - 179.5 or self.obs.y == int(myapp.height)/2 - 29.5 or self.obs.y == int(myapp.height)/2 + 120.5:
+                    # i could make this a range for asthetic purposes
                 if self.obs.x == 100 or self.obs.x == 250 or self.obs.x == 400 or self.obs.x == 550 or self.obs.x == 700 or self.obs.x == 850:
                     firstnumber = int(random.randint(1, 4))
                     if firstnumber == 1:
