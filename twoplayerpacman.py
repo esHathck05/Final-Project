@@ -213,10 +213,10 @@ Player 1 Wins!""")
             self.ghost.step()
             self.obs.step()
         
-        if self.ghost.pacisalive == True:
-            self.pac.x += self.pac.xdirection
-            self.pac.y += self.pac.ydirection
-            if gamemode == 2 or gamemode == 3:
+        if gamemode == 2 or gamemode == 3:
+            if self.ghost.pacisalive == True:
+                self.pac.x += self.pac.xdirection
+                self.pac.y += self.pac.ydirection
                 self.ghost.x += self.ghost.xdirection
                 self.ghost.y += self.ghost.ydirection
 
