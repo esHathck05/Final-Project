@@ -170,17 +170,18 @@ class Twoplayer(App):
         if self.ghost:
             self.ghost.move(event.key)
             
-    def leftKey(event):
-        left(Ghost)
-        
-    def rightKey(event):
-        right(Ghost)
-        
-    def upKey(event):
-        up(Ghost)
-        
-    def downKey(event):
-        down(Ghost)
+    if gamemode == 2 or gamemode == 3:        
+        def leftKey(event):
+            left(Ghost)
+            
+        def rightKey(event):
+            right(Ghost)
+            
+        def upKey(event):
+            up(Ghost)
+            
+        def downKey(event):
+            down(Ghost)
         
     
     def leftKey(event):
