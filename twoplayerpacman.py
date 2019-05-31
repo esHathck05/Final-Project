@@ -3,6 +3,14 @@ import random
 
 myapp = App()
 
+gamemode = input("Enter 1 for practice mode, 2 for easy mode, 3 for hard mode")
+if gamemode == 1:
+    practice = True
+elif gamemode == 2:
+    simple = True
+elif gamemode == 3:
+    hard = True
+
 # add different modes (practice mode, no moving obs mode, moving obs mode), user can choose number of obs
 
 black = Color(0, 1)
