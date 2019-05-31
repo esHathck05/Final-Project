@@ -141,10 +141,12 @@ class Twoplayer(App):
         myapp.listenKeyEvent('keydown', 'd', self.moveKey)
         myapp.listenKeyEvent('keydown', 'w', self.moveKey)
         myapp.listenKeyEvent('keydown', 's', self.moveKey)
-        myapp.listenKeyEvent('keydown', 'left arrow', self.moveKey)
-        myapp.listenKeyEvent('keydown', 'right arrow', self.moveKey)
-        myapp.listenKeyEvent('keydown', 'up arrow', self.moveKey)
-        myapp.listenKeyEvent('keydown', 'down arrow', self.moveKey)
+        
+        if gamemode == 2 or gamemode == 3:
+            myapp.listenKeyEvent('keydown', 'left arrow', self.moveKey)
+            myapp.listenKeyEvent('keydown', 'right arrow', self.moveKey)
+            myapp.listenKeyEvent('keydown', 'up arrow', self.moveKey)
+            myapp.listenKeyEvent('keydown', 'down arrow', self.moveKey)
 
             # spawning wall sprites
         for x in range(0, 1000, 150):
