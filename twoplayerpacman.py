@@ -224,9 +224,10 @@ Player 1 Wins!""")
             if self.pac.collidingWithSprites(Wall):
                 self.pac.xdirection *= -1
                 self.pac.ydirection *= -1
-            if self.ghost.collidingWithSprites(Wall):
-                self.ghost.xdirection *= -1
-                self.ghost.ydirection *= -1
+            if gamemode == 2 or gamemode == 3:    
+                if self.ghost.collidingWithSprites(Wall):
+                    self.ghost.xdirection *= -1
+                    self.ghost.ydirection *= -1
                 
         # for pac and ghost to both spawn on other sides of wall if they touch them        
             if self.pac.x < 0:
@@ -238,49 +239,50 @@ Player 1 Wins!""")
                 self.pac.y = int(myapp.height) - 30
             if self.pac.y > int(myapp.height) - 30:
                 self.pac.y = 0
-                
-            if self.ghost.x < 0:
-                self.ghost.x = int(myapp.width) - 30
-            if self.ghost.x > int(myapp.width) - 30:
-                self.ghost.x = 0
-                
-            if self.ghost.y < 0:
-                self.ghost.y = int(myapp.height) - 30
-            if self.ghost.y > int(myapp.height) - 30:
-                self.ghost.y = 0
-                
-        # for first obstacle to bounce off walls        
-            if self.obs.x < 0:
-                self.obs.xdirection *= -1
-            if self.obs.x > int(myapp.width) - 50:
-                self.obs.xdirection *= -1
-                
-            if self.obs.y < 0:
-                self.obs.ydirection *= -1
-            if self.obs.y > int(myapp.height) - 50:
-                self.obs.ydirection *= -1
-                
-        # for second obstacle to bounce off walls       
-            if self.obs2.x < 0:
-                self.obs2.xdirection *= -1
-            if self.obs2.x > int(myapp.width) - 50:
-                self.obs2.xdirection *= -1
-                
-            if self.obs2.y < 0:
-                self.obs2.ydirection *= -1
-            if self.obs2.y > int(myapp.height) - 50:
-                self.obs2.ydirection *= -1
-                
-        # for third obstacle to bounce off walls       
-            if self.obs3.x < 0:
-                self.obs3.xdirection *= -1
-            if self.obs3.x > int(myapp.width) - 50:
-                self.obs3.xdirection *= -1
-                
-            if self.obs3.y < 0:
-                self.obs3.ydirection *= -1
-            if self.obs3.y > int(myapp.height) - 50:
-                self.obs3.ydirection *= -1
+            
+            if gamemode == 2 or gamemode == 3:    
+                if self.ghost.x < 0:
+                    self.ghost.x = int(myapp.width) - 30
+                if self.ghost.x > int(myapp.width) - 30:
+                    self.ghost.x = 0
+                    
+                if self.ghost.y < 0:
+                    self.ghost.y = int(myapp.height) - 30
+                if self.ghost.y > int(myapp.height) - 30:
+                    self.ghost.y = 0
+                    
+            # for first obstacle to bounce off walls        
+                if self.obs.x < 0:
+                    self.obs.xdirection *= -1
+                if self.obs.x > int(myapp.width) - 50:
+                    self.obs.xdirection *= -1
+                    
+                if self.obs.y < 0:
+                    self.obs.ydirection *= -1
+                if self.obs.y > int(myapp.height) - 50:
+                    self.obs.ydirection *= -1
+                    
+            # for second obstacle to bounce off walls       
+                if self.obs2.x < 0:
+                    self.obs2.xdirection *= -1
+                if self.obs2.x > int(myapp.width) - 50:
+                    self.obs2.xdirection *= -1
+                    
+                if self.obs2.y < 0:
+                    self.obs2.ydirection *= -1
+                if self.obs2.y > int(myapp.height) - 50:
+                    self.obs2.ydirection *= -1
+                    
+            # for third obstacle to bounce off walls       
+                if self.obs3.x < 0:
+                    self.obs3.xdirection *= -1
+                if self.obs3.x > int(myapp.width) - 50:
+                    self.obs3.xdirection *= -1
+                    
+                if self.obs3.y < 0:
+                    self.obs3.ydirection *= -1
+                if self.obs3.y > int(myapp.height) - 50:
+                    self.obs3.ydirection *= -1
                 
         # for the first random obstacle
         if self.ghost.pacisalive == True:
