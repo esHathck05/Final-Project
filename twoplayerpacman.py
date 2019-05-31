@@ -216,8 +216,9 @@ Player 1 Wins!""")
         if self.ghost.pacisalive == True:
             self.pac.x += self.pac.xdirection
             self.pac.y += self.pac.ydirection
-            self.ghost.x += self.ghost.xdirection
-            self.ghost.y += self.ghost.ydirection
+            if gamemode == 2 or gamemode == 3:
+                self.ghost.x += self.ghost.xdirection
+                self.ghost.y += self.ghost.ydirection
 
         # for sprites to bounce off of obstacles        
             if self.pac.collidingWithSprites(Wall):
