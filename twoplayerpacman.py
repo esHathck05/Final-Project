@@ -325,84 +325,84 @@ Player 2 Wins!""")
                             print("""
 Player 1 Wins!""")
     
-            # for the second random obstacle
-            if self.ghost.pacisalive == True:
-                self.obs2.x += self.obs2.xdirection
-                self.obs2.y += self.obs2.ydirection
-                if self.obs2.y == int(myapp.height)/2 - 179.5 or self.obs2.y == int(myapp.height)/2 - 29.5 or self.obs2.y == int(myapp.height)/2 + 120.5:
-                    if self.obs2.x == 100 or self.obs2.x == 250 or self.obs2.x == 400 or self.obs2.x == 550 or self.obs2.x == 700 or self.obs2.x == 850:
-                        secondnumber = int(random.randint(1, 4))
-                        if secondnumber == 1:
-                            self.obs2.xdirection = 0
-                            self.obs2.ydirection = 5
-                        elif secondnumber == 2:
-                            self.obs2.xdirection = 0
-                            self.obs2.ydirection = -5
-                        elif secondnumber == 3:
-                            self.obs2.xdirection = -5
-                            self.obs2.ydirection = 0
-                        elif secondnumber == 4:
-                            self.obs2.xdirection = 5
-                            self.obs2.ydirection = 0
+                # for the second random obstacle
+                if self.ghost.pacisalive == True:
+                    self.obs2.x += self.obs2.xdirection
+                    self.obs2.y += self.obs2.ydirection
+                    if self.obs2.y == int(myapp.height)/2 - 179.5 or self.obs2.y == int(myapp.height)/2 - 29.5 or self.obs2.y == int(myapp.height)/2 + 120.5:
+                        if self.obs2.x == 100 or self.obs2.x == 250 or self.obs2.x == 400 or self.obs2.x == 550 or self.obs2.x == 700 or self.obs2.x == 850:
+                            secondnumber = int(random.randint(1, 4))
+                            if secondnumber == 1:
+                                self.obs2.xdirection = 0
+                                self.obs2.ydirection = 5
+                            elif secondnumber == 2:
+                                self.obs2.xdirection = 0
+                                self.obs2.ydirection = -5
+                            elif secondnumber == 3:
+                                self.obs2.xdirection = -5
+                                self.obs2.ydirection = 0
+                            elif secondnumber == 4:
+                                self.obs2.xdirection = 5
+                                self.obs2.ydirection = 0
                             
-            if self.ghost.pacisalive == True:
-                collides4 = self.obs2.collidingWithSprites(Pacman)
-                if len(collides4):
-                    collides4[0].destroy()
-                    self.ghost.pacisalive = False
-                    living['Pacman'] = living['Pacman'] - 1
-                    if living['Pacman'] == 0:
-                        self.stopscore = True
-                        print("""
+                if self.ghost.pacisalive == True:
+                    collides4 = self.obs2.collidingWithSprites(Pacman)
+                    if len(collides4):
+                        collides4[0].destroy()
+                        self.ghost.pacisalive = False
+                        living['Pacman'] = living['Pacman'] - 1
+                        if living['Pacman'] == 0:
+                            self.stopscore = True
+                            print("""
 Player 2 Wins!""")
-                collides5 = self.obs2.collidingWithSprites(Ghost)
-                if len(collides5):
-                    collides5[0].destroy()
-                    self.ghost.pacisalive = False
-                    living['Pacman'] = living['Pacman'] - 1
-                    if living['Pacman'] == 0:
-                        self.stopscore = True
-                        print("""
+                    collides5 = self.obs2.collidingWithSprites(Ghost)
+                    if len(collides5):
+                        collides5[0].destroy()
+                        self.ghost.pacisalive = False
+                        living['Pacman'] = living['Pacman'] - 1
+                        if living['Pacman'] == 0:
+                            self.stopscore = True
+                            print("""
 Player 1 Wins!""")
             
-            # for third random obstacle
-            if self.ghost.pacisalive == True:
-                self.obs3.x += self.obs3.xdirection
-                self.obs3.y += self.obs3.ydirection
-                if self.obs3.y == int(myapp.height)/2 - 179.5 or self.obs3.y == int(myapp.height)/2 - 29.5 or self.obs3.y == int(myapp.height)/2 + 120.5:
-                    if self.obs3.x == 100 or self.obs3.x == 250 or self.obs3.x == 400 or self.obs3.x == 550 or self.obs3.x == 700 or self.obs3.x == 850:
-                        thirdnumber = int(random.randint(1, 4))
-                        if thirdnumber == 1:
-                            self.obs3.xdirection = 0
-                            self.obs3.ydirection = 5
-                        elif thirdnumber == 2:
-                            self.obs3.xdirection = 0
-                            self.obs3.ydirection = -5
-                        elif thirdnumber == 3:
-                            self.obs3.xdirection = -5
-                            self.obs3.ydirection = 0
-                        elif thirdnumber == 4:
-                            self.obs3.xdirection = 5
-                            self.obs3.ydirection = 0
+                # for third random obstacle
+                if self.ghost.pacisalive == True:
+                    self.obs3.x += self.obs3.xdirection
+                    self.obs3.y += self.obs3.ydirection
+                    if self.obs3.y == int(myapp.height)/2 - 179.5 or self.obs3.y == int(myapp.height)/2 - 29.5 or self.obs3.y == int(myapp.height)/2 + 120.5:
+                        if self.obs3.x == 100 or self.obs3.x == 250 or self.obs3.x == 400 or self.obs3.x == 550 or self.obs3.x == 700 or self.obs3.x == 850:
+                            thirdnumber = int(random.randint(1, 4))
+                            if thirdnumber == 1:
+                                self.obs3.xdirection = 0
+                                self.obs3.ydirection = 5
+                            elif thirdnumber == 2:
+                                self.obs3.xdirection = 0
+                                self.obs3.ydirection = -5
+                            elif thirdnumber == 3:
+                                self.obs3.xdirection = -5
+                                self.obs3.ydirection = 0
+                            elif thirdnumber == 4:
+                                self.obs3.xdirection = 5
+                                self.obs3.ydirection = 0
                             
-            if self.ghost.pacisalive == True:
-                collides6 = self.obs3.collidingWithSprites(Pacman)
-                if len(collides6):
-                    collides6[0].destroy()
-                    self.ghost.pacisalive = False
-                    living['Pacman'] = living['Pacman'] - 1
-                    if living['Pacman'] == 0:
-                        self.stopscore = True
-                        print("""
+                if self.ghost.pacisalive == True:
+                    collides6 = self.obs3.collidingWithSprites(Pacman)
+                    if len(collides6):
+                        collides6[0].destroy()
+                        self.ghost.pacisalive = False
+                        living['Pacman'] = living['Pacman'] - 1
+                        if living['Pacman'] == 0:
+                            self.stopscore = True
+                            print("""
 Player 2 Wins!""")
-                collides7 = self.obs3.collidingWithSprites(Ghost)
-                if len(collides7):
-                    collides7[0].destroy()
-                    self.ghost.pacisalive = False
-                    living['Pacman'] = living['Pacman'] - 1
-                    if living['Pacman'] == 0:
-                        self.stopscore = True
-                        print("""
+                    collides7 = self.obs3.collidingWithSprites(Ghost)
+                    if len(collides7):
+                        collides7[0].destroy()
+                        self.ghost.pacisalive = False
+                        living['Pacman'] = living['Pacman'] - 1
+                        if living['Pacman'] == 0:
+                            self.stopscore = True
+                            print("""
 Player 1 Wins!""")
                         
 print("To Control Player 1 (yellow): WASD")
