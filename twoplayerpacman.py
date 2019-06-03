@@ -173,7 +173,6 @@ class Twoplayer(App):
         
     def downKey(event):
         down(Ghost)
-        
     
     def leftKey(event):
         left(Pacman)
