@@ -5,14 +5,13 @@ myapp = App()
 
 # add different modes (practice mode, no moving obs mode, moving obs mode), user can choose number of obs
 # add powerups for player 1
-
 black = Color(0, 1)
 yellow = Color(0xffff00, 1)
 blue = Color(0x6495ed, 1)
-white = Color(0xfffff0, 1.0)
-red = Color(0xff0000, 1.0)
-purple = Color(0x800080, 1.0)
-green = Color(0x00ff00, 1.0)
+white = Color(0xfffff0, 1)
+red = Color(0xff0000, 0.5)
+purple = Color(0x800080, 0.5)
+green = Color(0x00ff00, 0.5)
 gray = Color(0x888888, 1.0)
 noline = LineStyle(0, black)
 
