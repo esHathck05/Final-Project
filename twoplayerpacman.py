@@ -90,7 +90,7 @@ class Ghost(Sprite):
             if living['Pacman'] == 0:
                 self.stopscore = True
                 print("""
-Player 2 Wins!""")
+Player 2 Wins""")
 
 # base for other enemy "ghosts" sprites
 class Obstacle(Sprite):
@@ -109,7 +109,7 @@ class Obstacle(Sprite):
             if living['Pacman'] == 0:
                 self.stopscore = True
                 print("""
-Player 2 Wins!""")
+Player 2 Wins""")
         collides2 = self.collidingWithSprites(Ghost)
         if len(collides2):
             collides2[0].destroy()
@@ -118,7 +118,7 @@ Player 2 Wins!""")
             if living['Pacman'] == 0:
                 self.stopscore = True
                 print("""
-Player 1 Wins!""")
+Player 1 Wins""")
 
 class Twoplayer(App):
     def __init__(self):
@@ -195,7 +195,7 @@ class Twoplayer(App):
                 self.ghost.stopscore = True
                 self.ghost.pacisalive = False
                 print("""
-Player 1 Wins!""")
+Player 1 Wins""")
 
         self.ghost.step()
         self.obs.step()
@@ -298,7 +298,7 @@ Player 1 Wins!""")
                 if living['Pacman'] == 0:
                     self.stopscore = True
                     print("""
-Player 2 Wins!""")
+Player 2 Wins""")
             collides3 = self.obs.collidingWithSprites(Ghost)
             if len(collides3):
                 collides3[0].destroy()
@@ -307,7 +307,7 @@ Player 2 Wins!""")
                 if living['Pacman'] == 0:
                     self.stopscore = True
                     print("""
-Player 1 Wins!""")
+Player 1 Wins""")
 
         # for the second random obstacle
         if self.ghost.pacisalive == True:
@@ -338,7 +338,7 @@ Player 1 Wins!""")
                 if living['Pacman'] == 0:
                     self.stopscore = True
                     print("""
-Player 2 Wins!""")
+Player 2 Wins""")
             collides5 = self.obs2.collidingWithSprites(Ghost)
             if len(collides5):
                 collides5[0].destroy()
@@ -347,7 +347,7 @@ Player 2 Wins!""")
                 if living['Pacman'] == 0:
                     self.stopscore = True
                     print("""
-Player 1 Wins!""")
+Player 1 Wins""")
         
         # for third random obstacle
         if self.ghost.pacisalive == True:
@@ -378,7 +378,7 @@ Player 1 Wins!""")
                 if living['Pacman'] == 0:
                     self.stopscore = True
                     print("""
-Player 2 Wins!""")
+Player 2 Wins""")
             collides7 = self.obs3.collidingWithSprites(Ghost)
             if len(collides7):
                 collides7[0].destroy()
@@ -387,12 +387,12 @@ Player 2 Wins!""")
                 if living['Pacman'] == 0:
                     self.stopscore = True
                     print("""
-Player 1 Wins!""")
+Player 1 Wins""")
                         
 print("To Control Player 1 (yellow): WASD")
 print("To Control Player 2 (blue): Arrow Keys")
 print("""Player 1 must collect 2000 points to win. Player 2 must destroy Player 1 to win.
-If a player runs into the colored squares, it dies.""")
+Don't run into the colored squares.""")
 print("""
 Player 1 Score: """)
         
