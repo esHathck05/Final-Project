@@ -185,7 +185,7 @@ class Twoplayer(App):
         
     def step(self):
         if self.ghost.pacisalive == True:    
-            self.score += 0.5
+            self.score += 1
             if self.score % 100 == 0 and self.ghost.stopscore == False:
                 print(int(self.score))
             if self.score == 2000:
