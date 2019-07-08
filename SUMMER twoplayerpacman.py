@@ -5,6 +5,8 @@ myapp = App()
 
 # add different modes (practice mode, no moving obs mode, moving obs mode), user can choose number of obs
 # add powerups for player 1
+# add different options for different speeds of computers
+
 black = Color(0, 1)
 yellow = Color(0xffff00, 1)
 blue = Color(0x6495ed, 1)
