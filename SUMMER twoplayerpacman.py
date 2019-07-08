@@ -278,15 +278,15 @@ Player 1 Wins""")
                     firstnumber = int(random.randint(1, 4))
                     if firstnumber == 1:
                         self.obs.xdirection = 0
-                        self.obs.ydirection = 5
+                        self.obs.ydirection = 2.5
                     elif firstnumber == 2:
                         self.obs.xdirection = 0
-                        self.obs.ydirection = -5
+                        self.obs.ydirection = -2.5
                     elif firstnumber == 3:
-                        self.obs.xdirection = -5
+                        self.obs.xdirection = -2.5
                         self.obs.ydirection = 0
                     elif firstnumber == 4:
-                        self.obs.xdirection = 5
+                        self.obs.xdirection = 2.5
                         self.obs.ydirection = 0
                         
         if self.ghost.pacisalive == True:
