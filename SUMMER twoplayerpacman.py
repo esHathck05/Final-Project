@@ -126,7 +126,7 @@ class Twoplayer(App):
         self.score = 0
             # where all of the sprites spawn
         self.pac = Pacman(110, 110, yellow, self)
-        self.ghost = Ghost(int(myapp.width) - 157, int(myapp.height) - 150, blue, self)
+        self.ghost = Ghost(870, 415, blue, self)
         self.obs = Obstacle(400, 250, red, self)
         self.obs2 = Obstacle(400, 250, purple, self)
         self.obs3 = Obstacle(400, 250, green, self)
@@ -272,7 +272,7 @@ Player 1 Wins""")
         if self.ghost.pacisalive == True:
             self.obs.x += self.obs.xdirection
             self.obs.y += self.obs.ydirection
-            if self.obs.y == int(myapp.height)/2 - 179.5 or self.obs.y == int(myapp.height)/2 - 29.5 or self.obs.y == int(myapp.height)/2 + 120.5:
+            if self.obs.y == 100 or self.obs.y == 250 or self.obs.y == 400:
                     # i could make this a range for asthetic purposes
                 if self.obs.x == 100 or self.obs.x == 250 or self.obs.x == 400 or self.obs.x == 550 or self.obs.x == 700 or self.obs.x == 850:
                     firstnumber = int(random.randint(1, 4))
