@@ -143,21 +143,14 @@ class Twoplayer(App):
         myapp.listenKeyEvent('keydown', 'down arrow', self.moveKey)
 
             # spawning wall sprites
-        for x in range(0, 1000, 150):
+        for x in range(0, myapp.height, 150):
             Wall((0, x))
-        for x in range(0, 1000, 150):
             Wall((150, x))
-        for x in range(0, 1000, 150):
             Wall((300, x))
-        for x in range(0, 1000, 150):
             Wall((450, x))
-        for x in range(0, 1000, 150):
             Wall((600, x))            
-        for x in range(0, 1000, 150):
             Wall((750, x))
-        for x in range(0, 1000, 150):
             Wall((900, x)) 
-        for x in range(0, 1000, 150):
             Wall((1050, x))
             
     def moveKey(self, event):
