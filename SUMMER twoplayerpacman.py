@@ -96,7 +96,7 @@ Player 2 Wins""")
 class Obstacle(Sprite):
     def __init__(self, x, y, color, app):
         super().__init__(RectangleAsset(50, 50, LineStyle(0,Color(0, 1.0)), color), (x,y))
-        self.xdirection = -5
+        self.xdirection = -2.5
         self.ydirection = 0
         self.go = True
         
