@@ -154,7 +154,9 @@ class Twoplayer(App):
         for x in range(0, 1000, 150):
             Wall((750, x))
         for x in range(0, 1000, 150):
-            Wall((900, x))            
+            Wall((900, x)) 
+        for x in range(0, 1000, 150):
+            Wall((1050, x))
             
     def moveKey(self, event):
         if self.pac:
