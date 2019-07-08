@@ -358,15 +358,15 @@ Player 1 Wins""")
                     thirdnumber = int(random.randint(1, 4))
                     if thirdnumber == 1:
                         self.obs3.xdirection = 0
-                        self.obs3.ydirection = 5
+                        self.obs3.ydirection = 2.5
                     elif thirdnumber == 2:
                         self.obs3.xdirection = 0
-                        self.obs3.ydirection = -5
+                        self.obs3.ydirection = -2.5
                     elif thirdnumber == 3:
-                        self.obs3.xdirection = -5
+                        self.obs3.xdirection = -2.5
                         self.obs3.ydirection = 0
                     elif thirdnumber == 4:
-                        self.obs3.xdirection = 5
+                        self.obs3.xdirection = 2.5
                         self.obs3.ydirection = 0
                         
         if self.ghost.pacisalive == True:
