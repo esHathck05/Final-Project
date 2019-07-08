@@ -41,19 +41,19 @@ class Pacman(Sprite):
     def move(self, key):
         if key == "a":
             self.ydirection = 0
-            self.xdirection = -3
+            self.xdirection = -2.3
 
         elif key == "d":
             self.ydirection = 0
-            self.xdirection = 3
+            self.xdirection = 2.3
                 
         elif key == "w":
             self.xdirection = 0
-            self.ydirection = -3
+            self.ydirection = -2.3
             
         elif key == "s":
             self.xdirection = 0
-            self.ydirection = 3
+            self.ydirection = 2.3
 # player 2 sprite
 class Ghost(Sprite):
     def __init__(self, x, y, color, app):
@@ -67,19 +67,19 @@ class Ghost(Sprite):
     def move(self, key):
         if key == "left arrow":
             self.ydirection = 0
-            self.xdirection = -3.5
+            self.xdirection = -2.5
 
         elif key == "right arrow":
             self.ydirection = 0
-            self.xdirection = 3.5
+            self.xdirection = 2.5
                 
         elif key == "up arrow":
             self.xdirection = 0
-            self.ydirection = -3.5
+            self.ydirection = -2.5
             
         elif key == "down arrow":
             self.xdirection = 0
-            self.ydirection = 3.5
+            self.ydirection = 2.5
             
     def step(self):
         collides = self.collidingWithSprites(Pacman)
