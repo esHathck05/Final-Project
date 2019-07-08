@@ -353,7 +353,7 @@ Player 1 Wins""")
         if self.ghost.pacisalive == True:
             self.obs3.x += self.obs3.xdirection
             self.obs3.y += self.obs3.ydirection
-            if self.obs3.y == int(myapp.height)/2 - 179.5 or self.obs3.y == int(myapp.height)/2 - 29.5 or self.obs3.y == int(myapp.height)/2 + 120.5:
+            if self.obs3.y == 100 or self.obs3.y == 250 or self.obs3.y == 400:
                 if self.obs3.x == 100 or self.obs3.x == 250 or self.obs3.x == 400 or self.obs3.x == 550 or self.obs3.x == 700 or self.obs3.x == 850:
                     thirdnumber = int(random.randint(1, 4))
                     if thirdnumber == 1:
