@@ -32,6 +32,7 @@ class Wall(Sprite):
     
     def __init__(self, position):
         super().__init__(Wall.rect, position)
+        
 # player 1 sprite
 class Pacman(Sprite):
     def __init__(self, x, y, color, app):
@@ -56,6 +57,7 @@ class Pacman(Sprite):
         elif key == "s":
             self.xdirection = 0
             self.ydirection = 2.3
+            
 # player 2 sprite
 class Ghost(Sprite):
     def __init__(self, x, y, color, app):
@@ -126,6 +128,7 @@ class Twoplayer(App):
     def __init__(self):
         super().__init__()
         self.score = 0
+        
             # where all of the sprites spawn
         self.pac = Pacman(110, 110, yellow, self)
         self.ghost = Ghost(870, 415, blue, self)
