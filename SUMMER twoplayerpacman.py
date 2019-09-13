@@ -278,15 +278,15 @@ Player 1 Wins""")
                     firstnumber = int(random.randint(1, 4))
                     if firstnumber == 1:
                         self.obs.xdirection = 0
-                        self.obs.ydirection = 2.5
+                        self.obs.ydirection = 5.2
                     elif firstnumber == 2:
                         self.obs.xdirection = 0
-                        self.obs.ydirection = -2.5
+                        self.obs.ydirection = -5.2
                     elif firstnumber == 3:
-                        self.obs.xdirection = -2.5
+                        self.obs.xdirection = -5.2
                         self.obs.ydirection = 0
                     elif firstnumber == 4:
-                        self.obs.xdirection = 2.5
+                        self.obs.xdirection = 5.2
                         self.obs.ydirection = 0
                         
         if self.ghost.pacisalive == True:
@@ -318,15 +318,15 @@ Player 1 Wins""")
                     secondnumber = int(random.randint(1, 4))
                     if secondnumber == 1:
                         self.obs2.xdirection = 0
-                        self.obs2.ydirection = 2.5
+                        self.obs2.ydirection = 5.2
                     elif secondnumber == 2:
                         self.obs2.xdirection = 0
-                        self.obs2.ydirection = -2.5
+                        self.obs2.ydirection = -5.2
                     elif secondnumber == 3:
-                        self.obs2.xdirection = -2.5
+                        self.obs2.xdirection = -5.2
                         self.obs2.ydirection = 0
                     elif secondnumber == 4:
-                        self.obs2.xdirection = 2.5
+                        self.obs2.xdirection = 5.2
                         self.obs2.ydirection = 0
                         
         if self.ghost.pacisalive == True:
@@ -358,15 +358,15 @@ Player 1 Wins""")
                     thirdnumber = int(random.randint(1, 4))
                     if thirdnumber == 1:
                         self.obs3.xdirection = 0
-                        self.obs3.ydirection = 2.5
+                        self.obs3.ydirection = 5.2
                     elif thirdnumber == 2:
                         self.obs3.xdirection = 0
-                        self.obs3.ydirection = -2.5
+                        self.obs3.ydirection = -5.2
                     elif thirdnumber == 3:
-                        self.obs3.xdirection = -2.5
+                        self.obs3.xdirection = -5.2
                         self.obs3.ydirection = 0
                     elif thirdnumber == 4:
-                        self.obs3.xdirection = 2.5
+                        self.obs3.xdirection = 5.2
                         self.obs3.ydirection = 0
                         
         if self.ghost.pacisalive == True:
