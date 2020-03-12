@@ -127,9 +127,9 @@ class Twoplayer(App):
             # where all of the sprites spawn
         self.pac = Pacman(110, 110, yellow, self)
         self.ghost = Ghost(int(myapp.width) - 157, int(myapp.height) - 150, blue, self)
-        self.obs = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, red, self)
-        self.obs2 = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, purple, self)
-        self.obs3 = Obstacle(int(myapp.width)/2 - 8.5, int(myapp.height)/2 - 29.5, green, self)
+        self.obs = Obstacle(250, 550, red, self)
+        self.obs2 = Obstacle(250, 550, purple, self)
+        self.obs3 = Obstacle(250, 550, green, self)
         
         myapp.listenKeyEvent('keydown', 'a', self.moveKey)
         myapp.listenKeyEvent('keydown', 'd', self.moveKey)
