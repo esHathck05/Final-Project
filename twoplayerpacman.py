@@ -310,7 +310,6 @@ Player 2 Wins""")
                     self.stopscore = True
                     print("""
 Player 1 Wins""")
-
         # for the second random obstacle
         if self.ghost.pacisalive == True:
             self.obs2.x += self.obs2.xdirection
@@ -350,7 +349,6 @@ Player 2 Wins""")
                     self.stopscore = True
                     print("""
 Player 1 Wins""")
-        
         # for third random obstacle
         if self.ghost.pacisalive == True:
             self.obs3.x += self.obs3.xdirection
