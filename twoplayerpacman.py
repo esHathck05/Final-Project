@@ -272,7 +272,8 @@ Player 1 Wins""")
         if self.ghost.pacisalive == True:
             self.obs.x += self.obs.xdirection
             self.obs.y += self.obs.ydirection
-            if self.obs.y == int(myapp.height)/2 - 179.5 or self.obs.y == int(myapp.height)/2 - 29.5 or self.obs.y == int(myapp.height)/2 + 120.5:
+            yvalues = [100, 250, 400, 550]
+            if self.obs.y in yvalues:
                     # i could make this a range for asthetic purposes
                 if self.obs.x == 100 or self.obs.x == 250 or self.obs.x == 400 or self.obs.x == 550 or self.obs.x == 700 or self.obs.x == 850:
                     firstnumber = int(random.randint(1, 4))
