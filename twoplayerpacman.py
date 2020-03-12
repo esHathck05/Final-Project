@@ -126,7 +126,7 @@ class Twoplayer(App):
         self.score = 0
             # where all of the sprites spawn
         self.pac = Pacman(110, 110, yellow, self)
-        self.ghost = Ghost(int(myapp.width) - 157, int(myapp.height) - 150, blue, self)
+        self.ghost = Ghost(int(myapp.width) - 140, int(myapp.height) - 70, blue, self)
         self.obs = Obstacle(250, 550, red, self)
         self.obs2 = Obstacle(250, 550, purple, self)
         self.obs3 = Obstacle(250, 550, green, self)
