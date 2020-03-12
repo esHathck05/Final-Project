@@ -269,11 +269,11 @@ Player 1 Wins""")
                 self.obs3.ydirection *= -1
                 
         # for the first random obstacle
+        yvaluesobs = [100, 250, 400, 550]
+        xvaluesobs = [100, 250, 400, 550, 700, 850]
         if self.ghost.pacisalive == True:
             self.obs.x += self.obs.xdirection
             self.obs.y += self.obs.ydirection
-            yvaluesobs = [100, 250, 400, 550]
-            xvaluesobs = [100, 250, 400, 550, 700, 850]
             if self.obs.y in yvaluesobs:
                     # i could make this a range for asthetic purposes
                 if self.obs.x in xvaluesobs:
@@ -315,8 +315,8 @@ Player 1 Wins""")
         if self.ghost.pacisalive == True:
             self.obs2.x += self.obs2.xdirection
             self.obs2.y += self.obs2.ydirection
-            if self.obs2.y == int(myapp.height)/2 - 179.5 or self.obs2.y == int(myapp.height)/2 - 29.5 or self.obs2.y == int(myapp.height)/2 + 120.5:
-                if self.obs2.x == 100 or self.obs2.x == 250 or self.obs2.x == 400 or self.obs2.x == 550 or self.obs2.x == 700 or self.obs2.x == 850:
+            if self.obs2.y in yvaluesobs:
+                if self.obs2.x in xvaluesobs:
                     secondnumber = int(random.randint(1, 4))
                     if secondnumber == 1:
                         self.obs2.xdirection = 0
