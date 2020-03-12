@@ -127,9 +127,9 @@ class Twoplayer(App):
             # where all of the sprites spawn
         self.pac = Pacman(110, 110, yellow, self)
         self.ghost = Ghost(int(myapp.width) - 140, int(myapp.height) - 70, blue, self)
-        self.obs = Obstacle(250, 550, red, self)
-        self.obs2 = Obstacle(250, 550, purple, self)
-        self.obs3 = Obstacle(250, 550, green, self)
+        self.obs = Obstacle(250, 250, red, self)
+        self.obs2 = Obstacle(250, 250, purple, self)
+        self.obs3 = Obstacle(250, 250, green, self)
         
         myapp.listenKeyEvent('keydown', 'a', self.moveKey)
         myapp.listenKeyEvent('keydown', 'd', self.moveKey)
@@ -206,7 +206,7 @@ Player 1 Wins""")
             self.ghost.x += self.ghost.xdirection
             self.ghost.y += self.ghost.ydirection
 
-        # for sprites to bounce off of obstacles        
+        # for sprites to bounce off of walls        
             if self.pac.collidingWithSprites(Wall):
                 self.pac.xdirection *= -1
                 self.pac.ydirection *= -1
