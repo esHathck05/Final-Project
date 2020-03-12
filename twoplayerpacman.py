@@ -276,7 +276,7 @@ Player 1 Wins""")
             xvaluesobs = [100, 250, 400, 550, 700, 850]
             if self.obs.y in yvaluesobs:
                     # i could make this a range for asthetic purposes
-                if self.obs.x == 100 or self.obs.x == 250 or self.obs.x == 400 or self.obs.x == 550 or self.obs.x == 700 or self.obs.x == 850:
+                if self.obs.x in xvaluesobs:
                     firstnumber = int(random.randint(1, 4))
                     if firstnumber == 1:
                         self.obs.xdirection = 0
